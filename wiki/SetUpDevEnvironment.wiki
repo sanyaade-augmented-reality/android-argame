@@ -1,4 +1,4 @@
-#summary configure Android SDK for ARgame development and testing
+#summary Configure Android SDK for ARgame development and testing
 #labels Phase-Implementation,Phase-Support,Featured
 = Setup Android development environment =
 
