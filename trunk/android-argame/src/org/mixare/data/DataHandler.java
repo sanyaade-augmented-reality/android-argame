@@ -24,12 +24,12 @@ import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
 
-import edu.fsu.cs.argame.Marker;
 import edu.fsu.cs.argame.MixContext;
 import edu.fsu.cs.argame.MixView;
-import edu.fsu.cs.argame.NavigationMarker;
-import edu.fsu.cs.argame.POIMarker;
-import edu.fsu.cs.argame.SocialMarker;
+import edu.fsu.cs.argame.marker.Marker;
+import edu.fsu.cs.argame.marker.NavigationMarker;
+import edu.fsu.cs.argame.marker.POIMarker;
+import edu.fsu.cs.argame.marker.SocialMarker;
 
 import android.location.Location;
 import android.util.Log;

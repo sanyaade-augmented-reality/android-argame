@@ -29,11 +29,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.mixare.data.DataSource.DATAFORMAT;
 
-import edu.fsu.cs.argame.Marker;
 import edu.fsu.cs.argame.MixContext;
 import edu.fsu.cs.argame.MixView;
-import edu.fsu.cs.argame.POIMarker;
-import edu.fsu.cs.argame.SocialMarker;
+import edu.fsu.cs.argame.marker.Marker;
+import edu.fsu.cs.argame.marker.POIMarker;
+import edu.fsu.cs.argame.marker.SocialMarker;
 
 import android.util.Log;
 

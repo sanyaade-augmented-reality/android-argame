@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License along with 
  * this program. If not, see <http://www.gnu.org/licenses/>
  */
-package edu.fsu.cs.argame;
+package edu.fsu.cs.argame.marker;
 
 import java.net.URLDecoder;
 import java.text.DecimalFormat;
@@ -31,8 +31,9 @@ import org.mixare.render.Camera;
 import org.mixare.render.MixVector;
 
 import android.location.Location;
-import android.util.Log;
-import edu.fsu.cs.argame.R;
+import edu.fsu.cs.argame.MixContext;
+import edu.fsu.cs.argame.MixState;
+import edu.fsu.cs.argame.MixUtils;
 
 abstract public class Marker implements Comparable<Marker> {
 
@@ -231,7 +232,6 @@ abstract public class Marker implements Comparable<Marker> {
 	}
 	
 	public void drawTextBlock(PaintScreen dw) {
-		//TODO: grandezza cerchi e trasparenza
 		float maxHeight = Math.round(dw.getHeight() / 10f) + 1;
 
 		//TODO: change textblock only when distance changes

@@ -17,7 +17,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>
  */
 
-package edu.fsu.cs.argame;
+package edu.fsu.cs.argame.marker;
 
 import org.mixare.data.DataSource.DATASOURCE;
 

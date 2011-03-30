@@ -29,9 +29,9 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import edu.fsu.cs.argame.Marker;
 import edu.fsu.cs.argame.MixView;
-import edu.fsu.cs.argame.NavigationMarker;
+import edu.fsu.cs.argame.marker.Marker;
+import edu.fsu.cs.argame.marker.NavigationMarker;
 
 import android.util.Log;
 

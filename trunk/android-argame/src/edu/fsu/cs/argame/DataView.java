@@ -42,6 +42,7 @@ import android.location.Location;
 import android.util.Log;
 import android.widget.Toast;
 import edu.fsu.cs.argame.R;
+import edu.fsu.cs.argame.marker.Marker;
 
 
 /**

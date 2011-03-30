@@ -17,62 +17,73 @@
  * this program. If not, see <http://www.gnu.org/licenses/>
  */
 
-package edu.fsu.cs.argame;
+package edu.fsu.cs.argame.marker;
 
 import org.mixare.data.DataSource;
 import org.mixare.data.DataSource.DATASOURCE;
 import org.mixare.gui.PaintScreen;
 
-import android.graphics.Bitmap;
+import android.graphics.Path;
 import android.location.Location;
+import edu.fsu.cs.argame.MixUtils;
+import edu.fsu.cs.argame.MixView;
 import edu.fsu.cs.argame.R;
 
 /**
  * @author hannes
  *
  */
-public class SocialMarker extends Marker {
+public class NavigationMarker extends Marker {
 	
-	public static final int MAX_OBJECTS=15;
+	public static final int MAX_OBJECTS=10;
 
-	public SocialMarker(String title, double latitude, double longitude,
+	public NavigationMarker(String title, double latitude, double longitude,
 			double altitude, String URL, DATASOURCE datasource) {
 		super(title, latitude, longitude, altitude, URL, datasource);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void update(Location curGPSFix) {
-
-		//0.35 radians ~= 20 degree
-		//0.85 radians ~= 45 degree
-		//minAltitude = sin(0.35)
-		//maxAltitude = sin(0.85)
-		
-		// we want the social markers to be on the upper part of
-		// your surrounding sphere 
-		double altitude = curGPSFix.getAltitude()+Math.sin(0.35)*distance+Math.sin(0.4)*(distance/(MixView.dataView.getRadius()*1000f/distance));
-		mGeoLoc.setAltitude(altitude);
+	
 		super.update(curGPSFix);
+		
+		// we want the navigation markers to be on the lower part of
+		// your surrounding sphere so we set the height component of 
+		// the position vector radius/2 (in meter) below the user
 
+		locationVector.y-=MixView.dataView.getRadius()*500f;
+		//locationVector.y+=-1000;
 	}
 
 	@Override
 	public void draw(PaintScreen dw) {
-
+		drawArrow(dw);
 		drawTextBlock(dw);
-
+	}
+	
+	public void drawArrow(PaintScreen dw) {
 		if (isVisible) {
+			float currentAngle = MixUtils.getAngle(cMarker.x, cMarker.y, signMarker.x, signMarker.y);
 			float maxHeight = Math.round(dw.getHeight() / 10f) + 1;
-			Bitmap bitmap = DataSource.getBitmap(datasource);
-			if(bitmap!=null) {
-				dw.paintBitmap(bitmap, cMarker.x - maxHeight/1.5f, cMarker.y - maxHeight/1.5f);				
-			}
-			else {
-				dw.setStrokeWidth(maxHeight / 10f);
-				dw.setFill(false);
-				dw.setColor(DataSource.getColor(datasource));
-				dw.paintCircle(cMarker.x, cMarker.y, maxHeight / 1.5f);
-			}
+
+			dw.setColor(DataSource.getColor(datasource));
+			dw.setStrokeWidth(maxHeight / 10f);
+			dw.setFill(false);
+			
+			Path arrow = new Path();
+			float radius = maxHeight / 1.5f;
+			float x=0;
+			float y=0;
+			arrow.moveTo(x-radius/3, y+radius);
+			arrow.lineTo(x+radius/3, y+radius);
+			arrow.lineTo(x+radius/3, y);
+			arrow.lineTo(x+radius, y);
+			arrow.lineTo(x, y-radius);
+			arrow.lineTo(x-radius, y);
+			arrow.lineTo(x-radius/3,y);
+			arrow.close();
+			dw.paintPath(arrow,cMarker.x,cMarker.y,radius*2,radius*2,currentAngle+90,1);			
 		}
 	}
 
@@ -80,5 +91,4 @@ public class SocialMarker extends Marker {
 	public int getMaxObjects() {
 		return MAX_OBJECTS;
 	}
-
 }

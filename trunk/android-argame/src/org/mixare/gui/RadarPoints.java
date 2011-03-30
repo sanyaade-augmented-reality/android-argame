@@ -22,7 +22,7 @@ import org.mixare.data.DataHandler;
 import org.mixare.data.DataSource;
 
 import edu.fsu.cs.argame.DataView;
-import edu.fsu.cs.argame.Marker;
+import edu.fsu.cs.argame.marker.Marker;
 
 import android.graphics.Color;
 

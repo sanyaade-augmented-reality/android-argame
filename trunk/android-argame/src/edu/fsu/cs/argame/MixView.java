@@ -72,6 +72,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import edu.fsu.cs.argame.R;
 import edu.fsu.cs.argame.R.drawable;
+import edu.fsu.cs.argame.marker.Marker;
 
 public class MixView extends Activity implements SensorEventListener,LocationListener, OnTouchListener{
 
@@ -81,7 +82,7 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 	private boolean isInited;
 	private MixContext mixContext;
 	static PaintScreen dWindow;
-	static DataView dataView;
+	public static DataView dataView;
 	private Thread downloadThread;
 
 	private float RTmp[] = new float[9];

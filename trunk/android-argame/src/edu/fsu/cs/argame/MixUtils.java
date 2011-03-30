@@ -18,9 +18,7 @@
  */
 package edu.fsu.cs.argame;
 
-import edu.fsu.cs.argame.R;
-
-class MixUtils {
+public class MixUtils {
 	public static String parseAction(String action) {
 		return (action.substring(action.indexOf(':') + 1, action.length()))
 				.trim();

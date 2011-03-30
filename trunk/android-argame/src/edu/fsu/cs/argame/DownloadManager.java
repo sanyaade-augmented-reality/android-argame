@@ -37,6 +37,7 @@ import org.xml.sax.InputSource;
 
 import android.util.Log;
 import edu.fsu.cs.argame.R;
+import edu.fsu.cs.argame.marker.Marker;
 
 public class DownloadManager implements Runnable {
 

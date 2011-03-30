@@ -49,6 +49,7 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
 import edu.fsu.cs.argame.R;
+import edu.fsu.cs.argame.marker.Marker;
 
 public class MixMap extends MapActivity implements OnTouchListener{
 
