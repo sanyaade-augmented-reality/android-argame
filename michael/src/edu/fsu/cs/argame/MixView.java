@@ -70,7 +70,6 @@ import android.widget.FrameLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import edu.fsu.cs.argame.R;
 import edu.fsu.cs.argame.R.drawable;
 import edu.fsu.cs.argame.marker.Marker;
 

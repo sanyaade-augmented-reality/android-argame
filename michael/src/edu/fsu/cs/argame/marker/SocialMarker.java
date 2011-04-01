@@ -26,7 +26,6 @@ import org.mixare.gui.PaintScreen;
 import android.graphics.Bitmap;
 import android.location.Location;
 import edu.fsu.cs.argame.MixView;
-import edu.fsu.cs.argame.R;
 
 /**
  * @author hannes

@@ -23,7 +23,6 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 import android.hardware.Camera;
-import edu.fsu.cs.argame.R;
 
 /**
  * Ensures compatibility with older and newer versions of the API. 

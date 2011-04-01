@@ -67,7 +67,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
-import edu.fsu.cs.argame.R;
 
 public class MixContext extends ContextWrapper {
 

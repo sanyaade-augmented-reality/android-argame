@@ -18,7 +18,6 @@
  */
 package edu.fsu.cs.argame;
 
-import edu.fsu.cs.argame.R;
 import org.mixare.render.Matrix;
 import org.mixare.render.MixVector;
 

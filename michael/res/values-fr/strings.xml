@@ -1,73 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mixare</string>
-    <string name="N">N</string>
-    <string name="NE">NE</string>
-    <string name="E">E</string>
-    <string name="SE">SE</string>
-    <string name="S">S</string>
-    <string name="SW">SW</string>
-    <string name="W">W</string>
-    <string name="NW">NW</string>
-    
-
-    <string name="empty_list">Désolé, \nIl n\'a pas d\'information de position \nde disponible avec ce rayon.\nS\'il vous plaît essayez de rechercher dans un plus large éventail.</string>
-	<string name="option_not_available">Désolé, Nous y travaillons... \nCette option sera disponible bientôt!</string>
-	
-	<string name="license">Copyright (C) 2010- Peer internet solutions 
-		\n\nThis program is free software: 	you can redistribute it and/or modify it under the terms of the 
-		GNU General Public License as published by the Free Software Foundation, either version 3 of the License, 
-		or at your option) any later version. 
-		\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even 
-		the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public 
-		License for more details. 
-		\n\n You should have received a copy of the GNU General Public License along with this program. 
-		If not, see &lt;http://www.gnu.org/licenses/&gt;
-	</string>
-	
-	<string name="menu_item_1">Données</string>
-	<string name="menu_item_2">Vue liste</string>
-	<string name="menu_item_3">Vue carte</string>
-	<string name="menu_item_4">Niveau de zoom</string>
-	<string name="menu_item_5">Recherche</string>
-	<string name="menu_item_6">Info</string>
-	<string name="menu_item_7">License</string>
-	
-	
-	<string name="connection_error_dialog">Désolé, une erreur de connexion est survenue! \nS\'il vous plaît vérifier si vous êtes connecté à Internet.</string>
-	<string name="connection_error_dialog_button1">Réessayer</string>
-	<string name="connection_error_dialog_button2">Ouverture des paramètres</string>
-	<string name="connection_error_dialog_button3">Fermeture</string>
-	
-	<string name="connection_GPS_dialog_text">La position GPS ne peut être mise à jour... \nSi vous continuez il se pourrait que l\'information
-		\nne sera pas affichée au bon endroit.</string>
-	<string name="connection_GPS_dialog_button1">Continuer</string>
-	<string name="connection_GPS_dialog_button2">Fermer</string>
-	
-	<string name="no_website_available">Désolé, il n\'y a pas d\'autre \ninformation de disponible.</string>
-	
-	<string name="license_title">License</string>
-	<string name="close_button">Fermer</string>
-	<string name="general_info_title">Information générale</string>
-	
-	<string name="general_info_text">GPS info: </string>
-	<string name="longitude">Longitude: </string>
-	<string name="latitude">Latitude: </string>
-	<string name="altitude">Altitude: </string>
-	<string name="speed">Speed: </string>
-	<string name="accuracy">Accuracy: </string>
-	<string name="gps_last_fix">Last GPS fix: </string>
-	
-	<string name="map_menu_normal_mode">Carte</string>
-	<string name="map_menu_satellite_mode">Satellite</string>
-	<string name="map_menu_cam_mode">Camera</string>
-	<string name="map_my_location">Ma Position</string>
-	
-	<string name="map_current_location_click">Ma position actuelle</string>
-	
-	<string name="data_source_change_wikipedia">Changé pour les données Wikipedia</string>
-	<string name="data_source_change_twitter">Changé pour les données Twitter</string>
-	<string name="data_source_change_buzz">Changé pour les données Google Buzz</string>
-	<string name="data_source_change_osm">Changé pour les données OpenStreetMap</string>
-		
+<string name="menu_pause">Pause </string>
+<string name="menu_stop">Abandonner... et mourir</string>
+<string name="menu_my_location">Ma localisation</string>
+<string name="menu_map_view">Vue Carte</string>
+<string name="menu_satellite_view">Vue Satellite</string>
+<string name="confirm_menu_stop">Quelle horreur! C\'en était trop pour vous?</string>
+<string name="paused">Le monde entier retient son souffle! Comment faites-vous ça?</string>
+<string name="resume">Continuer</string>
+<string name="waiting_for_location">En attente de données de localisation précises... Vous devez être dehors et sous un ciel dégagé. Cette opération peut durer quelques minutes...</string>
+<string name="message_pick_destination">Choisir une destination sur la carte</string>
+<string name="message_confirm_destination">Est-ce la destination de votre choix?</string>
+<string name="error_no_gps">Aucun GPS trouvé</string>
+<string name="error_gps_disabled">Zombie, Run! nécessite des données de localisation provenant du GPS, mais le GPS est désactivé. Activez-le.</string>
+<string name="enable_gps">Activer GPS</string>
+<string name="error_no_vibrator">Aucun vibreur trouvé. M\'enfin? Zombie, Run! ne peut fonctionner dans un tel environnement!</string>
+<string name="message_win">Vous avez survécu!</string>
+<string name="message_lose">Aaah! Des cerveaaaauuuuuuux!</string>
+<string name="app_name">Zombie, Run!</string>
+<string name="header_singleplayer_entry">Partie en solitaire</string>
+<string name="header_multiplayer_entry">Partie multijoueurs</string>
+<string name="spinner_zombie_count_text">Type d\'infection (densité des zombies)</string>
+<string name="spinner_zombie_speed_text">Type de zombies (vitesse des zombies)</string>
+<string name="singleplayer_game_entry_button_text">Commencer une partie en solitaire</string>
+<string name="multiplayer_game_entry_button_text">Commencer une partie multijoueurs</string>
+<string name="start_singleplayer_game_button_text">Partie en solitaire</string>
+<string name="start_multiplayer_game_button_text">Créer une partie multijoueurs</string>
+<string name="join_multiplayer_game_button_text">Rejoindre une partie multijoueurs</string>
+<string name="help_button_text">Aide</string>
+<string name="quit_confirm">Ouais.</string>
+<string name="quit_cancel">En fait, non.</string>
+<string name="start_game_button_text">Commencer la partie</string>
+<string name="new_game_button">Nouvelle partie</string>
+<string name="yes">Oui.</string>
+<string name="no">Non.</string>
 </resources>

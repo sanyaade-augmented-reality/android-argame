@@ -55,7 +55,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import edu.fsu.cs.argame.R;
 import edu.fsu.cs.argame.marker.Marker;
 
 public class MixListView extends ListActivity {

@@ -22,7 +22,6 @@ package edu.fsu.cs.argame.marker;
 import org.mixare.data.DataSource.DATASOURCE;
 
 import android.location.Location;
-import edu.fsu.cs.argame.R;
 
 /**
  * @author hannes

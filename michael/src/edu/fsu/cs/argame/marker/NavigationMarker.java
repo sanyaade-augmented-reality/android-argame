@@ -27,7 +27,6 @@ import android.graphics.Path;
 import android.location.Location;
 import edu.fsu.cs.argame.MixUtils;
 import edu.fsu.cs.argame.MixView;
-import edu.fsu.cs.argame.R;
 
 /**
  * @author hannes
