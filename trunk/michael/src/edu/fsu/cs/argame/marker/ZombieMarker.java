@@ -9,7 +9,6 @@ import org.mixare.data.DataSource.DATASOURCE;
 import org.mixare.reality.PhysicalPlace;
 
 import net.peterd.zombierun.constants.Constants;
-import net.peterd.zombierun.entity.Player;
 import net.peterd.zombierun.game.GameEvent;
 import net.peterd.zombierun.service.GameEventBroadcaster;
 import net.peterd.zombierun.service.GameEventListener;
@@ -22,20 +21,20 @@ public class ZombieMarker extends Marker implements GameEventListener {
   private final int id;
   private double lat;
   private double lon;
-  private final List<Player> players;
+  private final List<PlayerMarker> players;
   private final double zombieSpeedMetersPerSecond;
   private final GameEventBroadcaster gameEventBroadcaster;
   private boolean isNoticingPlayer = false;
   private boolean isNearPlayer = false;
-  private Player playerZombieIsChasing;
+  private PlayerMarker playerZombieIsChasing;
   
-  private Player nearestPlayer = null;
+  private PlayerMarker nearestPlayer = null;
   private double distanceToNearestPlayer = 0;
   
   public ZombieMarker(int id,
       PhysicalPlace startingLocation,
-      List<Player> players,
-      Player playerZombieIsChasing,
+      List<PlayerMarker> players,
+      PlayerMarker playerZombieIsChasing,
       double zombieSpeedMetersPerSecond,
       GameEventBroadcaster gameEventBroadcaster) {
 	super((id + ""), startingLocation.getLatitude(), startingLocation.getLongitude(), 0.00, "", DATASOURCE.ZOMBIE);
@@ -50,7 +49,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
   
   public ZombieMarker(int id,
       PhysicalPlace startingLocation,
-      List<Player> players,
+      List<PlayerMarker> players,
       double zombieSpeedMetersPerSecond,
       GameEventBroadcaster gameEventBroadcaster) {
     this(id, startingLocation, players, null, zombieSpeedMetersPerSecond, gameEventBroadcaster);
@@ -87,7 +86,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
 
     // hasNoticedPlayer sets playerZombieIsChasing and distanceToPlayerZombieIsChasing.
     if (hasNoticedPlayer()) {
-      Player playerZombieIsChasing = this.playerZombieIsChasing;
+      PlayerMarker playerZombieIsChasing = this.playerZombieIsChasing;
       movementDistanceMeters =
           Math.min(movementDistanceMeters, distanceToNearestPlayer);
       moveTowardPlayer(playerZombieIsChasing, movementDistanceMeters);
@@ -105,7 +104,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
     
     conditionallyWarnZombieNearPlayer();
     
-    Player playerZombieIsChasing = this.playerZombieIsChasing;
+    PlayerMarker playerZombieIsChasing = this.playerZombieIsChasing;
     if (playerZombieIsChasing != null && hasCaughtPlayer(playerZombieIsChasing)) {
       gameEventBroadcaster.broadcastEvent(GameEvent.ZOMBIE_CATCH_PLAYER);
     }
@@ -115,7 +114,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
     distanceToNearestPlayer = Double.MAX_VALUE;
     // Don't allocate a list iterator.
     for (int i = 0; i < players.size(); ++i) {
-      Player player = players.get(i);
+      PlayerMarker player = players.get(i);
       double distance = GeoPointUtil.distanceMeters(lat, 
           lon, 
           player.getLatitude(), 
@@ -128,7 +127,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
   }
 
   private void conditionallyWarnZombieNearPlayer() {
-    Player playerZombieIsChasing = this.playerZombieIsChasing;
+    PlayerMarker playerZombieIsChasing = this.playerZombieIsChasing;
     if (playerZombieIsChasing != null && isNearPlayer(playerZombieIsChasing)) {
       if (!isNearPlayer) {
         gameEventBroadcaster.broadcastEvent(GameEvent.ZOMBIE_NEAR_PLAYER);
@@ -149,7 +148,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
    * Precondition: {@link #playerZombieIsChasing} must not be null.
    * @return
    */
-  private boolean hasCaughtPlayer(Player playerZombieIsChasing) {
+  private boolean hasCaughtPlayer(PlayerMarker playerZombieIsChasing) {
     return distanceToNearestPlayer < Constants.zombieCatchPlayerDistanceMeters;
   }
   
@@ -172,7 +171,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
     }
   }
   
-  private boolean isNearPlayer(Player player) {
+  private boolean isNearPlayer(PlayerMarker player) {
     return distanceToNearestPlayer < Constants.zombieNearPlayerDistanceMeters;
   }
   
@@ -186,7 +185,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
     lon = location.getLongitude();
   }
   
-  private void moveTowardPlayer(Player player, double movementDistanceMeters) {
+  private void moveTowardPlayer(PlayerMarker player, double movementDistanceMeters) {
     if (Log.loggingEnabled()) {
       Log.d("ZombieRun.Zombie", "Moving towards player " + player.toString());
     }
@@ -216,7 +215,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
   }
   
   public static ZombieMarker fromString(String stringEncodedZombie,
-      List<Player> players,
+      List<PlayerMarker> players,
       GameEventBroadcaster gameEventBroadcaster) {
     String[] parts = stringEncodedZombie.split(":", 4);
     if (parts.length != 4) {
@@ -236,7 +235,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
     }
     
     String indexOfPlayerZombieIsChasingStr = parts[1];
-    Player playerZombieIsChasing = null;
+    PlayerMarker playerZombieIsChasing = null;
     try {
       int indexOfPlayerZombieIsChasing = Integer.parseInt(indexOfPlayerZombieIsChasingStr);
       if (indexOfPlayerZombieIsChasing >= 0 && indexOfPlayerZombieIsChasing < players.size()) {
@@ -290,7 +289,7 @@ public class ZombieMarker extends Marker implements GameEventListener {
 
     public static List<ZombieMarker> fromString(
         String encodedString,
-        List<Player> players,
+        List<PlayerMarker> players,
         GameEventBroadcaster gameEventBroadcaster) {
       List<ZombieMarker> zombies = new ArrayList<ZombieMarker>();
       String[] lines = encodedString.split("\n");

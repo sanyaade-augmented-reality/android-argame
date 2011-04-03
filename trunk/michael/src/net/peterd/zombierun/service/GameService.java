@@ -2,14 +2,15 @@ package net.peterd.zombierun.service;
 
 import org.mixare.reality.PhysicalPlace;
 
+import edu.fsu.cs.argame.marker.DestinationMarker;
+import edu.fsu.cs.argame.marker.PlayerMarker;
+import edu.fsu.cs.argame.marker.ZombieMarker;
+import edu.fsu.cs.argame.marker.ZombiePopulator;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import net.peterd.zombierun.constants.Constants;
-import net.peterd.zombierun.entity.Destination;
-import net.peterd.zombierun.entity.Player;
-import net.peterd.zombierun.entity.Zombie;
-import net.peterd.zombierun.entity.ZombiePopulator;
 import net.peterd.zombierun.game.GameEvent;
 import net.peterd.zombierun.game.GameSettings;
 import net.peterd.zombierun.game.GameState;
@@ -88,7 +89,7 @@ public class GameService {
 	}
 
 	public void createMultiPlayerGame(PhysicalPlace startingLocation,
-			Destination destination, GameSettings settings) {
+			DestinationMarker destination, GameSettings settings) {
 		createGame(startingLocation, destination, settings);
 		// XXX: handle IO errors somehow.
 		// TODO: run this creating action in a non-UI thread.
@@ -102,12 +103,12 @@ public class GameService {
 	}
 
 	public void createSinglePlayerGame(PhysicalPlace startingLocation,
-			Destination destination, GameSettings settings) {
+			DestinationMarker destination, GameSettings settings) {
 		createGame(startingLocation, destination, settings);
 	}
 
 	private void createGame(PhysicalPlace startingLocation,
-			Destination destination, GameSettings gameSettings) {
+			DestinationMarker destination, GameSettings gameSettings) {
 		if (startingLocation == null) {
 			throw new IllegalArgumentException(
 					"startingLocation cannot be null.");
@@ -135,7 +136,7 @@ public class GameService {
 		populator.populate();
 
 		int nextPlayerId = state.getPlayers().size();
-		Player thisDevicePlayer = new Player(state.getDestination(),
+		PlayerMarker thisDevicePlayer = new PlayerMarker(state.getDestination(),
 				nextPlayerId, null, handler);
 		state.getPlayers().add(thisDevicePlayer);
 		state.setThisDevicePlayer(thisDevicePlayer);
@@ -163,10 +164,10 @@ public class GameService {
 
 	private void registerAllEntitiesAsGameEventListeners(GameState state,
 			GameEventHandler gameEventHandler) {
-		for (Player player : state.getPlayers()) {
+		for (PlayerMarker player : state.getPlayers()) {
 			gameEventHandler.addListener(player);
 		}
-		for (Zombie zombie : state.getZombies()) {
+		for (ZombieMarker zombie : state.getZombies()) {
 			gameEventHandler.addListener(zombie);
 		}
 	}

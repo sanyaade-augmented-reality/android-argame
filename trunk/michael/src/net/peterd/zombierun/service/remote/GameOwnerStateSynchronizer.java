@@ -1,6 +1,6 @@
 package net.peterd.zombierun.service.remote;
 
-import net.peterd.zombierun.entity.Zombie.ZombieListSerializer;
+import edu.fsu.cs.argame.marker.ZombieMarker.ZombieListSerializer;
 import net.peterd.zombierun.game.GameState;
 import net.peterd.zombierun.service.GameEventBroadcaster;
 import net.peterd.zombierun.util.Log;

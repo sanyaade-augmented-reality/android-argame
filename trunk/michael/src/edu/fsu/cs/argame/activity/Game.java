@@ -9,8 +9,6 @@ import net.peterd.zombierun.util.NotImplementedException;
 import net.peterd.zombierun.constants.BundleConstants;
 import net.peterd.zombierun.constants.Constants;
 import net.peterd.zombierun.constants.Constants.GAME_MENU_OPTION;
-import net.peterd.zombierun.entity.Destination;
-import net.peterd.zombierun.entity.Player;
 import net.peterd.zombierun.game.GameEvent;
 import net.peterd.zombierun.overlay.DestinationOverlay;
 import net.peterd.zombierun.overlay.ZombieOverlay;
@@ -25,6 +23,8 @@ import com.google.android.maps.MapView;
 
 import edu.fsu.cs.argame.MixMap;
 import edu.fsu.cs.argame.R;
+import edu.fsu.cs.argame.marker.DestinationMarker;
+import edu.fsu.cs.argame.marker.PlayerMarker;
 
 public abstract class Game extends MixMap implements GameEventListener {
 
@@ -55,7 +55,7 @@ public abstract class Game extends MixMap implements GameEventListener {
     //
     // This is where we should get the zombie locations and the game destination.
     Bundle intentBundle = getIntent().getExtras();
-    Destination destination = Destination.fromBundle(intentBundle);
+    DestinationMarker destination = DestinationMarker.fromBundle(intentBundle);
     if (destination == null) {
       throw new RuntimeException("Cannot enter this activity with a null destination in the " +
           "bundle.  Bundle: '" + intentBundle.toString() + "'.");
@@ -88,7 +88,7 @@ public abstract class Game extends MixMap implements GameEventListener {
     //service.getEventHandler().removeListener(this);
   }
 
-  protected abstract void createGame(GameService service, Destination destination);
+  protected abstract void createGame(GameService service, DestinationMarker destination);
 
   private void initializeDrawables() {
     zombieMeanderingDrawable = getResources().getDrawable(R.drawable.zombie1body);
@@ -124,12 +124,12 @@ public abstract class Game extends MixMap implements GameEventListener {
   }
 
   public void initializeDestinationOverlay(MapView map) {
-    AtomicReference<Destination> destinationReference = new AtomicReference<Destination>();
+    AtomicReference<DestinationMarker> destinationReference = new AtomicReference<DestinationMarker>();
 //    destinationReference.set(service.getGameState().getDestination());
     map.getOverlays().add(new DestinationOverlay(destinationReference, destinationDrawable));
   }
 
-  protected void centerOnPlayer(Player player) {
+  protected void centerOnPlayer(PlayerMarker player) {
     PhysicalPlace playerLocation = player.getLocation();
     if (playerLocation != null) {
       MapView mapView = this.mapView;
@@ -159,7 +159,7 @@ public abstract class Game extends MixMap implements GameEventListener {
     startActivity(intent);
   }
 
-  private void onZombieNearPlayer(Player player) {
+  private void onZombieNearPlayer(PlayerMarker player) {
     mapView.getController().animateTo(player.getLocation().getGeoPoint());
     if (mapView.getZoomLevel() < 19) {
       mapView.getController().setZoom(19);

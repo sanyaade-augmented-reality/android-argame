@@ -3,7 +3,6 @@ package edu.fsu.cs.argame.activity;
 import java.util.concurrent.atomic.AtomicReference;
 
 import net.peterd.zombierun.constants.Constants.GAME_MENU_OPTION;
-import net.peterd.zombierun.entity.Destination;
 import net.peterd.zombierun.overlay.DestinationOverlay;
 import net.peterd.zombierun.service.HardwareManager;
 import net.peterd.zombierun.util.GeoPointUtil;
@@ -25,6 +24,8 @@ import com.google.android.maps.Overlay;
 
 import edu.fsu.cs.argame.MixMap;
 import edu.fsu.cs.argame.R;
+import edu.fsu.cs.argame.marker.DestinationMarker;
+
 import org.mixare.reality.*;
 
 public class StartGame extends Activity {
@@ -59,7 +60,7 @@ public class StartGame extends Activity {
 	public static class BaseStartGameActivity extends MixMap
 	// implements LocationListener
 	{
-		protected final AtomicReference<Destination> destinationReference = new AtomicReference<Destination>();
+		protected final AtomicReference<DestinationMarker> destinationReference = new AtomicReference<DestinationMarker>();
 		protected Drawable destinationDrawable;
 		protected Location currentLocation;
 
@@ -96,7 +97,7 @@ public class StartGame extends Activity {
 				if (extras != null) {
 					Log.i("ZombieRun.BaseStartGameActivity",
 							"Setting Destination from intent extras.");
-					destinationReference.set(Destination.fromBundle(extras));
+					destinationReference.set(DestinationMarker.fromBundle(extras));
 				}
 			}
 
@@ -117,7 +118,7 @@ public class StartGame extends Activity {
 		@Override
 		public void onSaveInstanceState(Bundle state) {
 			super.onSaveInstanceState(state);
-			Destination destination = destinationReference.get();
+			DestinationMarker destination = destinationReference.get();
 			if (destination != null) {
 				Log.i("ZombieRun.BaseStartGameActivity",
 						"Putting Destination to activity bundle.");
@@ -130,12 +131,12 @@ public class StartGame extends Activity {
 			super.onSaveInstanceState(state);
 			Log.i("ZombieRun.BaseStartGameActivity",
 					"Getting Destination from activity bundle.");
-			destinationReference.set(Destination.fromBundle(state));
+			destinationReference.set(DestinationMarker.fromBundle(state));
 		}
 
 		@Override
 		public void startActivity(Intent intent) {
-			Destination destination = destinationReference.get();
+			DestinationMarker destination = destinationReference.get();
 			Bundle bundle = new Bundle();
 			if (destination != null) {
 				Log.i("ZombieRun.BaseStartGameActivity",
@@ -249,7 +250,7 @@ public class StartGame extends Activity {
 			mapView.getOverlays().add(new DestinationPickingOverlay(this));
 		}
 
-		protected void destinationChosen(Destination destination) {
+		protected void destinationChosen(DestinationMarker destination) {
 			destinationReference.set(destination);
 
 			final Intent startGameIntent;
@@ -285,7 +286,7 @@ public class StartGame extends Activity {
 			@Override
 			public boolean onTap(GeoPoint point, MapView map) {
 				super.onTap(point, map);
-				activity.destinationChosen(new Destination(new PhysicalPlace(
+				activity.destinationChosen(new DestinationMarker(new PhysicalPlace(
 						point)));
 				return true;
 			}

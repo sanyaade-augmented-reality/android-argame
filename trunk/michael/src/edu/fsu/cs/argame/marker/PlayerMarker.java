@@ -12,7 +12,6 @@ import android.os.Bundle;
 import net.peterd.zombierun.util.Log;
 
 import net.peterd.zombierun.constants.Constants;
-import net.peterd.zombierun.entity.Destination;
 import net.peterd.zombierun.game.GameEvent;
 import net.peterd.zombierun.service.GameEventBroadcaster;
 import net.peterd.zombierun.service.GameEventListener;
@@ -22,7 +21,7 @@ public class PlayerMarker extends Marker implements LocationListener, GameEventL
 
   private double lat;
   private double lon;
-  private final Destination destination;
+  private final DestinationMarker destination;
   private final int playerId;
   private final GameEventBroadcaster gameEventBroadcaster;
   
@@ -35,7 +34,7 @@ public class PlayerMarker extends Marker implements LocationListener, GameEventL
    * @param onReachDestinationRunnable The {@link Runnable} that should be run when the player
    *    reaches the destination.
    */
-  public PlayerMarker(Destination destination,
+  public PlayerMarker(DestinationMarker destination,
       int playerId,
       PhysicalPlace location,
       GameEventBroadcaster gameEventBroadcaster) {
@@ -86,7 +85,7 @@ public class PlayerMarker extends Marker implements LocationListener, GameEventL
    * @throws IllegalArgumentException if there are any parsing errors. 
    */
   public static PlayerMarker fromString(String serializedPlayer,
-      Destination destination,
+      DestinationMarker destination,
       GameEventBroadcaster gameEventBroadcaster) {
     String[] splits = serializedPlayer.split(":", 2);
     String playerIdString;
@@ -175,7 +174,7 @@ public class PlayerMarker extends Marker implements LocationListener, GameEventL
 
     public static List<PlayerMarker> fromString(
         String encodedString,
-        Destination destinationReference,
+        DestinationMarker destinationReference,
         GameEventBroadcaster gameEventBroadcaster) {
       List<PlayerMarker> players = new ArrayList<PlayerMarker>();
       String[] lines = encodedString.split("\n");

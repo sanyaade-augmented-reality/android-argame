@@ -1,8 +1,9 @@
-package net.peterd.zombierun.entity;
+package edu.fsu.cs.argame.marker;
 
 import java.util.List;
 
 import org.mixare.reality.PhysicalPlace;
+
 
 import net.peterd.zombierun.util.Log;
 
@@ -38,8 +39,8 @@ public class ZombiePopulator {
   private double maxRadiusMeters;
   public void populate() {
     int zombieId = 0;
-    List<Zombie> zombies = gameState.getZombies();
-    List<Player> players = gameState.getPlayers();
+    List<ZombieMarker> zombies = gameState.getZombies();
+    List<PlayerMarker> players = gameState.getPlayers();
     GameEventBroadcaster broadcaster = gameEventBroadcaster;
     double averageZombieSpeed = averageZombieSpeedMetersPerSecond;
     
@@ -72,7 +73,7 @@ public class ZombiePopulator {
                 Constants.zombieSpeedPercentageDeviationFromMean);
         
         Log.d("ZombieRun.ZombiePopulator", "Zombie speed: " + zombieSpeed + "m/s.");
-        Zombie zombie = new Zombie(zombieId,
+        ZombieMarker zombie = new ZombieMarker(zombieId,
             zombieLocation,
             players,
             zombieSpeed,

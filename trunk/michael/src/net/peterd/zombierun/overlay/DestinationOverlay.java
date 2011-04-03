@@ -2,8 +2,6 @@ package net.peterd.zombierun.overlay;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.peterd.zombierun.entity.Destination;
-
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 
@@ -12,14 +10,16 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
 
+import edu.fsu.cs.argame.marker.DestinationMarker;
+
 public class DestinationOverlay extends Overlay {
 
-  private final AtomicReference<Destination> destinationReference;
+  private final AtomicReference<DestinationMarker> destinationReference;
   private final Drawable destinationDrawable;
   private ItemizedOverlay<OverlayItem> internalOverlay;
-  private Destination lastCheckedDestination;
+  private DestinationMarker lastCheckedDestination;
   
-  public DestinationOverlay(AtomicReference<Destination> destinationReference,
+  public DestinationOverlay(AtomicReference<DestinationMarker> destinationReference,
       Drawable destinationDrawable) {
     super();
     this.destinationReference = destinationReference;
@@ -28,7 +28,7 @@ public class DestinationOverlay extends Overlay {
   
   @Override
   public void draw(Canvas canvas, MapView view, boolean shadow) {
-    Destination currentDestination = destinationReference.get();
+    DestinationMarker currentDestination = destinationReference.get();
     if (currentDestination == null) {
       internalOverlay = null;
       return;
