@@ -37,8 +37,8 @@ public class DataSource {
 	// and dataformat is how the data is formatted. 
 	// this is necessary for example when you have multiple datasources with the same
 	// dataformat
-	public enum DATASOURCE { WIKIPEDIA, BUZZ, TWITTER, OSM, OWNURL};
-	public enum DATAFORMAT { WIKIPEDIA, BUZZ, TWITTER, OSM, MIXARE};	
+	public enum DATASOURCE { WIKIPEDIA, BUZZ, TWITTER, OSM, OWNURL, ZOMBIE};
+	public enum DATAFORMAT { WIKIPEDIA, BUZZ, TWITTER, OSM, MIXARE, ZOMBIE};	
 
 	/** default URL */
 	private static final String WIKI_BASE_URL = "http://ws.geonames.org/findNearbyWikipediaJSON";
@@ -83,6 +83,7 @@ public class DataSource {
 			case TWITTER: ret=DATAFORMAT.TWITTER; break;
 			case OSM: ret=DATAFORMAT.OSM; break;
 			case OWNURL: ret=DATAFORMAT.MIXARE; break;
+			case ZOMBIE: ret=DATAFORMAT.ZOMBIE; break;
 			default: ret=DATAFORMAT.MIXARE; break;
 		}
 		return ret;
@@ -109,6 +110,10 @@ public class DataSource {
 			break;
 			
 			case OWNURL:
+				ret = MixListView.customizedURL;
+			break;
+			
+			case ZOMBIE:
 				ret = MixListView.customizedURL;
 			break;
 			
@@ -164,6 +169,7 @@ public class DataSource {
 			case TWITTER:	ret=Color.rgb(50, 204, 255); break;
 			case OSM:		ret=Color.rgb(255, 168, 0); break;
 			case WIKIPEDIA:	ret=Color.RED; break;
+			case ZOMBIE:	ret=Color.RED; break;
 			default:		ret=Color.WHITE; break;
 		}
 		return ret;

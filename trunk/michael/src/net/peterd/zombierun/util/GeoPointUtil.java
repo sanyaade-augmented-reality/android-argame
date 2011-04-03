@@ -1,5 +1,7 @@
 package net.peterd.zombierun.util;
 
+import org.mixare.reality.PhysicalPlace;
+
 import net.peterd.zombierun.constants.Constants;
 
 import com.google.android.maps.GeoPoint;
@@ -13,14 +15,14 @@ public class GeoPointUtil {
         (int) Math.round(location.getLongitude() * 1E6));
   }
   
-  public static FloatingPointGeoPoint getGeoPointNear(double lat, double lon,
+  public static PhysicalPlace getGeoPointNear(double lat, double lon,
       double distanceMeters) {
     double targetLat = Math.random() - 0.5 + lat;
     double targetLon = Math.random() - 0.5 + lon;
     return geoPointTowardsTarget(lat, lon, targetLat, targetLon, distanceMeters);
   }
 
-  public static FloatingPointGeoPoint geoPointTowardsTarget(
+  public static PhysicalPlace geoPointTowardsTarget(
       double oLat,
       double oLon,
       double dLat,
@@ -33,12 +35,12 @@ public class GeoPointUtil {
     double deltaLat = diffLat * (distanceMeters / diffMagnitudeMeters);
     double deltaLon = diffLon * (distanceMeters / diffMagnitudeMeters);
     
-    return new FloatingPointGeoPoint(oLat + deltaLat, oLon + deltaLon);
+    return new PhysicalPlace(oLat + deltaLat, oLon + deltaLon);
   }
   
   /**
    * A version of distanceMeters that can be used without allocating additional
-   * FloatingPointGeoPoint objects.
+   * PhysicalPlace objects.
    */
   public static double distanceMeters(double aLat, double aLon, double bLat, double bLon) {
     // Haversine formula, from http://mathforum.org/library/drmath/view/51879.html
