@@ -34,6 +34,7 @@ public class menu extends MixView {
                 String strText = textView.getText().toString();
                 if (strText.equalsIgnoreCase(getResources().getString(R.string.menu_item_play))) {
                     // Launch the Stream Activity
+                    // startActivity(new Intent(menu.this, MixMap.class));
                     startActivity(new Intent(menu.this, MixView.class));
                 } else if (strText.equalsIgnoreCase(getResources().getString(R.string.menu_item_help))) {
                     // Launch the Help Activity

@@ -85,6 +85,9 @@ public class DataView {
 	public static final int MENU_ITEM_5 = R.string.menu_item_5;
 	public static final int MENU_ITEM_6 = R.string.menu_item_6;
 	public static final int MENU_ITEM_7 = R.string.menu_item_7;
+	
+	public static final int MENU_ITEM_8 = R.string.menu_item_8;
+
 
 	public static final int CONNECTION_ERROR_DIALOG_TEXT = R.string.connection_error_dialog;
 	public static final int CONNECTION_ERROR_DIALOG_BUTTON1 = R.string.connection_error_dialog_button1;

@@ -20,7 +20,13 @@
 package edu.fsu.cs.argame;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import net.peterd.zombierun.constants.Constants.GAME_MENU_OPTION;
+import net.peterd.zombierun.game.GameSettings;
+import net.peterd.zombierun.overlay.MotoCliqSafeMyLocationOverlay;
+import net.peterd.zombierun.service.GameService;
 
 import org.mixare.data.DataHandler;
 
@@ -60,14 +66,22 @@ public class MixMap extends MapActivity implements OnTouchListener{
 	private static GeoPoint startPoint;
 
 	private MixContext mixContext;
-	private MapView mapView;
+	protected MapView mapView;
 
 	static MixMap map;
 	private static Context thisContext;
 	private static TextView searchNotificationTxt;
 	public static List<Marker> originalMarkerList;
+	
+//	// gamemapactivity
+//	protected GameService service;
+//	protected final Collection<GAME_MENU_OPTION> menuOptions = new ArrayList<GAME_MENU_OPTION>();
+	protected GameSettings gameSettings;
+//	// dont need?
+//	//	protected Drawable myLocationDrawable;
+//	//	protected MotoCliqSafeMyLocationOverlay myLocationOverlay;
 
-
+	
 	@Override
 	protected boolean isRouteDisplayed() {
 		return false;
@@ -76,6 +90,13 @@ public class MixMap extends MapActivity implements OnTouchListener{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		
+//		// gamemapactivity
+//		service = new GameService(this);
+		
+		
+		
 		dataView = MixView.dataView;
 		mixContext = dataView.getContext();
 		setMarkerList(dataView.getDataHandler().getMarkerList());
@@ -92,7 +113,28 @@ public class MixMap extends MapActivity implements OnTouchListener{
 
 		setStartPoint();
 		createOverlay();
-
+		
+		
+//		// gamemapactivity 
+//		Bundle intentExtras = getIntent().getExtras();
+//		if (intentExtras != null) {
+//			GameSettings settings = GameSettings.fromBundle(intentExtras);
+//			if (settings != null) {
+//				gameSettings = settings;
+//			}
+//		}
+//		if (savedInstanceState != null) {
+//			GameSettings settings = GameSettings.fromBundle(savedInstanceState);
+//			if (settings != null) {
+//				gameSettings = settings;
+//			}
+//		}
+//		// detete this?
+//		if (savedInstanceState != null) {
+//			onRestoreInstanceState(savedInstanceState);
+//		}
+				
+		
 		if (dataView.isFrozen()){
 			searchNotificationTxt = new TextView(this);
 			searchNotificationTxt.setWidth(MixView.dWindow.getWidth());
@@ -204,10 +246,6 @@ public class MixMap extends MapActivity implements OnTouchListener{
 		}
 	}
 
-//	public static ArrayList<Marker> getMarkerList(){
-//		return markerList;
-//	}
-
 	public void setMarkerList(List<Marker> maList){
 		markerList = maList;
 	}
@@ -216,17 +254,9 @@ public class MixMap extends MapActivity implements OnTouchListener{
 		return dataView;
 	}
 
-//	public static void setDataView(DataView view){
-//		dataView= view;
-//	}
-
-//	public static void setMixContext(MixContext context){
-//		ctx= context;
-//	}
-//
-//	public static MixContext getMixContext(){
-//		return ctx;
-//	}
+	public static void setDataView(DataView view){
+		dataView= view;
+	}
 
 	public List<Overlay> getMapOverlayList(){
 		return mapOverlays;
@@ -299,6 +329,16 @@ public class MixMap extends MapActivity implements OnTouchListener{
 		return false;
 	}
 
+//	public static ArrayList<Marker> getMarkerList(){
+//	return markerList;
+//}
+//	public static void setMixContext(MixContext context){
+//	ctx= context;
+//}
+//
+//public static MixContext getMixContext(){
+//	return ctx;
+//}
 }
 
 
@@ -350,4 +390,33 @@ class MixOverlay extends ItemizedOverlay<OverlayItem> {
 		populate();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
