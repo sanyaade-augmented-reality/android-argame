@@ -1,5 +1,7 @@
 package net.peterd.zombierun.service;
 
+import org.mixare.reality.PhysicalPlace;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,7 +18,6 @@ import net.peterd.zombierun.service.remote.GameOwnerStateSynchronizer;
 import net.peterd.zombierun.service.remote.GameServerBridge;
 import net.peterd.zombierun.service.remote.ParticipantStateSynchronizer;
 import net.peterd.zombierun.service.remote.RemoteGameStateSynchronizer;
-import net.peterd.zombierun.util.FloatingPointGeoPoint;
 
 /**
  * Responsible for maintaining game state. Handles initializing the game state,
@@ -86,7 +87,7 @@ public class GameService {
 		// started.
 	}
 
-	public void createMultiPlayerGame(FloatingPointGeoPoint startingLocation,
+	public void createMultiPlayerGame(PhysicalPlace startingLocation,
 			Destination destination, GameSettings settings) {
 		createGame(startingLocation, destination, settings);
 		// XXX: handle IO errors somehow.
@@ -100,12 +101,12 @@ public class GameService {
 		eventHandler.addListener(remoteSynchronizer);
 	}
 
-	public void createSinglePlayerGame(FloatingPointGeoPoint startingLocation,
+	public void createSinglePlayerGame(PhysicalPlace startingLocation,
 			Destination destination, GameSettings settings) {
 		createGame(startingLocation, destination, settings);
 	}
 
-	private void createGame(FloatingPointGeoPoint startingLocation,
+	private void createGame(PhysicalPlace startingLocation,
 			Destination destination, GameSettings gameSettings) {
 		if (startingLocation == null) {
 			throw new IllegalArgumentException(

@@ -5,13 +5,13 @@ import java.util.ConcurrentModificationException;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import edu.fsu.cs.argame.R;
-
 import net.peterd.zombierun.constants.Constants;
 import net.peterd.zombierun.game.GameEvent;
-import net.peterd.zombierun.util.FloatingPointGeoPoint;
 import net.peterd.zombierun.util.GeoPointUtil;
 import net.peterd.zombierun.util.Log;
+
+import org.mixare.reality.PhysicalPlace;
+
 import android.app.Activity;
 import android.location.Criteria;
 import android.location.Location;
@@ -19,6 +19,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Vibrator;
+import edu.fsu.cs.argame.R;
 
 public class HardwareManager implements GameEventListener, LocationListener {
 
@@ -102,12 +103,12 @@ public class HardwareManager implements GameEventListener, LocationListener {
     return locationListeners.remove(listener) != null;
   }
 
-  public FloatingPointGeoPoint getLastKnownLocation() {
+  public PhysicalPlace getLastKnownLocation() {
     Location location = locationManager.getLastKnownLocation(bestLocationProvider);
     if (location == null) {
       return null;
     } else {
-      return new FloatingPointGeoPoint(GeoPointUtil.fromLocation(location));
+      return new PhysicalPlace(GeoPointUtil.fromLocation(location));
     }
   }
 

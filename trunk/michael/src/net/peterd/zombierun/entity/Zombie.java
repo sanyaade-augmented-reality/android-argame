@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.mixare.reality.PhysicalPlace;
+
 import net.peterd.zombierun.constants.Constants;
 import net.peterd.zombierun.game.GameEvent;
 import net.peterd.zombierun.service.GameEventBroadcaster;
 import net.peterd.zombierun.service.GameEventListener;
-import net.peterd.zombierun.util.FloatingPointGeoPoint;
 import net.peterd.zombierun.util.GeoPointUtil;
 
 import net.peterd.zombierun.util.Log;
@@ -29,7 +30,7 @@ public class Zombie implements GameEventListener {
   private double distanceToNearestPlayer = 0;
   
   public Zombie(int id,
-      FloatingPointGeoPoint startingLocation,
+      PhysicalPlace startingLocation,
       List<Player> players,
       Player playerZombieIsChasing,
       double zombieSpeedMetersPerSecond,
@@ -44,7 +45,7 @@ public class Zombie implements GameEventListener {
   }
   
   public Zombie(int id,
-      FloatingPointGeoPoint startingLocation,
+		  PhysicalPlace startingLocation,
       List<Player> players,
       double zombieSpeedMetersPerSecond,
       GameEventBroadcaster gameEventBroadcaster) {
@@ -174,8 +175,8 @@ public class Zombie implements GameEventListener {
   private void meander(double movementDistanceMeters) {
     // TODO: Give them a primary direction, not just random movements.
     // TODO: Make zombies cluster a little bit
-    // TODO: Try to optimize out allocating this FloatingPointGeoPoint
-    FloatingPointGeoPoint location = 
+    // TODO: Try to optimize out allocating this PhysicalPlace
+	  PhysicalPlace location = 
       GeoPointUtil.getGeoPointNear(lat, lon, movementDistanceMeters);
     lat = location.getLatitude();
     lon = location.getLongitude();
@@ -185,7 +186,7 @@ public class Zombie implements GameEventListener {
     if (Log.loggingEnabled()) {
       Log.d("ZombieRun.Zombie", "Moving towards player " + player.toString());
     }
-    FloatingPointGeoPoint location = GeoPointUtil.geoPointTowardsTarget(lat, 
+    PhysicalPlace location = GeoPointUtil.geoPointTowardsTarget(lat, 
         lon, 
         player.getLatitude(), 
         player.getLongitude(),
@@ -204,7 +205,7 @@ public class Zombie implements GameEventListener {
     builder.append(":");
     builder.append(indexOfPlayerZombieIsChasing);
     builder.append(":");
-    builder.append(FloatingPointGeoPoint.toString(lat, lon));
+    builder.append(PhysicalPlace.toString(lat, lon));
     builder.append(":");
     builder.append(zombieSpeedMetersPerSecond);
     return builder.toString();
@@ -217,7 +218,7 @@ public class Zombie implements GameEventListener {
     if (parts.length != 4) {
       Log.e("ZombieRun.Zombie", "Did not find 3 parts, which should have been the zombie id, " +
       		"index of the player the zombie is chasing (-1 for none), and a string-encoded " +
-          "FloatingPointGeoPoint, in '" + stringEncodedZombie + "'.");
+          "PhysicalPlace, in '" + stringEncodedZombie + "'.");
       return null;
     }
     
@@ -245,9 +246,9 @@ public class Zombie implements GameEventListener {
     }
     
     String fpgpString = parts[2];
-    FloatingPointGeoPoint fpgp = FloatingPointGeoPoint.fromString(fpgpString);
+    PhysicalPlace fpgp = PhysicalPlace.fromString(fpgpString);
     if (fpgp == null) {
-      Log.e("Zombie", "Could not parse zombie position FloatingPointGeoPoint from encoded " +
+      Log.e("Zombie", "Could not parse zombie position PhysicalPlace from encoded " +
           "string '" + fpgpString + "'.");
       return null;
     }

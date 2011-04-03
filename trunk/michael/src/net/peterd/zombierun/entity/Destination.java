@@ -1,20 +1,21 @@
 package net.peterd.zombierun.entity;
 
+import org.mixare.reality.PhysicalPlace;
+
 import android.os.Bundle;
 import net.peterd.zombierun.util.NotImplementedException;
-import net.peterd.zombierun.util.FloatingPointGeoPoint;
 
 public class Destination {
 
-  private final FloatingPointGeoPoint location;
+  private final PhysicalPlace location;
   
   public static final String DESTINATION_BUNDLE_KEY = "net.peterd.zombierun.entity.Destination";
   
-  public Destination(FloatingPointGeoPoint location) {
+  public Destination(PhysicalPlace location) {
     this.location = location;
   }
   
-  public FloatingPointGeoPoint getLocation() {
+  public PhysicalPlace getLocation() {
     return location;
   }
   
@@ -24,8 +25,8 @@ public class Destination {
   }
   
   public static Destination fromString(String string) {
-    FloatingPointGeoPoint fpgp =
-        FloatingPointGeoPoint.fromString(string);
+    PhysicalPlace fpgp =
+        PhysicalPlace.fromString(string);
     return fpgp == null ? null : new Destination(fpgp);
   }
   
@@ -33,8 +34,8 @@ public class Destination {
     if (!bundle.containsKey(DESTINATION_BUNDLE_KEY)) {
       return null;
     }
-    FloatingPointGeoPoint fpgp =
-        FloatingPointGeoPoint.fromString(bundle.getString(DESTINATION_BUNDLE_KEY));
+    PhysicalPlace fpgp =
+        PhysicalPlace.fromString(bundle.getString(DESTINATION_BUNDLE_KEY));
     return fpgp == null ? null : new Destination(fpgp);
   }
 

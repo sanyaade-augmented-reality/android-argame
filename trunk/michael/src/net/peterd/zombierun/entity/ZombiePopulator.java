@@ -2,26 +2,27 @@ package net.peterd.zombierun.entity;
 
 import java.util.List;
 
+import org.mixare.reality.PhysicalPlace;
+
 import net.peterd.zombierun.util.Log;
 
 import net.peterd.zombierun.constants.Constants;
 import net.peterd.zombierun.game.GameState;
 import net.peterd.zombierun.service.GameEventBroadcaster;
-import net.peterd.zombierun.util.FloatingPointGeoPoint;
 import net.peterd.zombierun.util.GeoPointUtil;
 
 public class ZombiePopulator {
 
   private final GameState gameState;
-  private final FloatingPointGeoPoint startingLocation;
-  private final FloatingPointGeoPoint destination;
+  private final PhysicalPlace startingLocation;
+  private final PhysicalPlace destination;
   private final GameEventBroadcaster gameEventBroadcaster;
   private final double averageZombieSpeedMetersPerSecond;
   private final double zombiesPerSquareKilometer;
   
   public ZombiePopulator(GameState gameState,
-      FloatingPointGeoPoint startingLocation,
-      FloatingPointGeoPoint destination,
+		  PhysicalPlace startingLocation,
+		  PhysicalPlace destination,
       double averageZombieSpeedMetersPerSecond,
       double zombiesPerSquareKilometer,
       GameEventBroadcaster gameEventBroadcaster) {
@@ -54,12 +55,12 @@ public class ZombiePopulator {
     
     while (true) {
       int clusterSize = (int) Math.round(Math.random() * Constants.maxZombieClusterSize) + 1;
-      FloatingPointGeoPoint clusterCentroid = getNewZombieClusterCentroid();
+      PhysicalPlace clusterCentroid = getNewZombieClusterCentroid();
       for (int i = 0; i < clusterSize; i++) {
         if (zombies.size() >= zombieCount) {
           return;
         }
-        FloatingPointGeoPoint zombieLocation =
+        PhysicalPlace zombieLocation =
             GeoPointUtil.getGeoPointNear(clusterCentroid.getLatitude(),
                 clusterCentroid.getLongitude(),
                 Math.random() * Constants.maxZombieClusterSizeMeters);
@@ -82,7 +83,7 @@ public class ZombiePopulator {
     }
   }
   
-  private FloatingPointGeoPoint getPlayerDestinationMidpoint() {
+  private PhysicalPlace getPlayerDestinationMidpoint() {
     double distanceBetween =
         GeoPointUtil.distanceMeters(startingLocation.getLatitude(),
             startingLocation.getLongitude(),
@@ -96,10 +97,10 @@ public class ZombiePopulator {
         distanceBetween / 2);
   }
   
-  private FloatingPointGeoPoint getNewZombieClusterCentroid() {
-    FloatingPointGeoPoint startingLocation = this.startingLocation;
-    FloatingPointGeoPoint midPoint = getPlayerDestinationMidpoint();
-    FloatingPointGeoPoint candidatePoint =
+  private PhysicalPlace getNewZombieClusterCentroid() {
+    PhysicalPlace startingLocation = this.startingLocation;
+    PhysicalPlace midPoint = getPlayerDestinationMidpoint();
+    PhysicalPlace candidatePoint =
         GeoPointUtil.getGeoPointNear(
             midPoint.getLatitude(),
             midPoint.getLongitude(),

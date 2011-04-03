@@ -3,6 +3,8 @@ package net.peterd.zombierun.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.mixare.reality.PhysicalPlace;
+
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
@@ -12,7 +14,6 @@ import net.peterd.zombierun.constants.Constants;
 import net.peterd.zombierun.game.GameEvent;
 import net.peterd.zombierun.service.GameEventBroadcaster;
 import net.peterd.zombierun.service.GameEventListener;
-import net.peterd.zombierun.util.FloatingPointGeoPoint;
 import net.peterd.zombierun.util.GeoPointUtil;
 
 public class Player implements LocationListener, GameEventListener {
@@ -34,7 +35,7 @@ public class Player implements LocationListener, GameEventListener {
    */
   public Player(Destination destination,
       int playerId,
-      FloatingPointGeoPoint location,
+      PhysicalPlace location,
       GameEventBroadcaster gameEventBroadcaster) {
     this.destination = destination;
     this.playerId = playerId;
@@ -49,13 +50,13 @@ public class Player implements LocationListener, GameEventListener {
    * Get the player's current location.
    * 
    * Deprecated, please use getLatitude and getLongitude directly to reduce the
-   * number of FloatingPointGeoPoint allocations.
+   * number of PhysicalPlace allocations.
    * 
    * @return The player's current location, possibly null.
    */
   @Deprecated
-  public FloatingPointGeoPoint getLocation() {
-    return new FloatingPointGeoPoint(lat, lon);
+  public PhysicalPlace getLocation() {
+    return new PhysicalPlace(lat, lon);
   }
   
   public double getLatitude() {
@@ -72,7 +73,7 @@ public class Player implements LocationListener, GameEventListener {
   @Override
   public String toString() {
     if (lat != 0 && lon != 0) {
-      return playerId + ":" + FloatingPointGeoPoint.toString(lat, lon);
+      return playerId + ":" + PhysicalPlace.toString(lat, lon);
     } else {
       return Integer.toString(playerId);
     }
@@ -106,10 +107,10 @@ public class Player implements LocationListener, GameEventListener {
           "Could not parse player id from string '" + serializedPlayer + "'.", e);
     }
     
-    FloatingPointGeoPoint location = null;
+    PhysicalPlace location = null;
     if (locationString != null) {
       // May return null.  That's okay, by the semantics of the Player constructor.
-      location = FloatingPointGeoPoint.fromString(locationString);
+      location = PhysicalPlace.fromString(locationString);
     }
     
     return new Player(destination, playerId, location, gameEventBroadcaster);
@@ -120,7 +121,7 @@ public class Player implements LocationListener, GameEventListener {
    * @param location
    */
   @Deprecated
-  public void setLocation(FloatingPointGeoPoint location) {
+  public void setLocation(PhysicalPlace location) {
     if (location != null) {
       setLocation(location.getLatitude(), location.getLongitude());
     } else {
@@ -133,7 +134,7 @@ public class Player implements LocationListener, GameEventListener {
     lon = longitude;
     if (Log.loggingEnabled()) {
       Log.d("ZombieRun.Player", "Player location updated to " +
-          FloatingPointGeoPoint.toString(lat, lon));
+          PhysicalPlace.toString(lat, lon));
     }
     if (GeoPointUtil.distanceMeters(lat,
             lon,
@@ -145,8 +146,8 @@ public class Player implements LocationListener, GameEventListener {
   }
   
   public void onLocationChanged(Location location) {
-    FloatingPointGeoPoint point =
-        new FloatingPointGeoPoint(GeoPointUtil.fromLocation(location));
+    PhysicalPlace point =
+        new PhysicalPlace(GeoPointUtil.fromLocation(location));
     setLocation(point.getLatitude(), point.getLongitude());
   }
 
