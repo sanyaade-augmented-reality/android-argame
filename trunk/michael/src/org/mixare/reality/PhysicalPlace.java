@@ -18,7 +18,11 @@
  */
 package org.mixare.reality;
 
+import net.peterd.zombierun.util.Log;
+
 import org.mixare.render.MixVector;
+
+import com.google.android.maps.GeoPoint;
 
 import android.location.Location;
 
@@ -26,7 +30,7 @@ public class PhysicalPlace {
 	
 	double latitude;
 	double longitude;
-	double altitude;
+	double altitude=0;
 
 	public PhysicalPlace() {
 
@@ -38,6 +42,17 @@ public class PhysicalPlace {
 
 	public PhysicalPlace(double latitude, double longitude, double altitude) {
 		this.setTo(latitude, longitude, altitude);
+	}
+	
+	public PhysicalPlace(double latitude, double longitude) {
+		this.setTo(latitude, longitude, altitude);
+	}
+	
+
+	public PhysicalPlace(GeoPoint fromLocation) {
+	    this.latitude = fromLocation.getLatitudeE6() / 1E6f;
+	    this.longitude = fromLocation.getLongitudeE6() / 1E6f;
+	    this.altitude = 0.00;
 	}
 
 	public void setTo(double latitude, double longitude, double altitude) {
@@ -137,4 +152,34 @@ public class PhysicalPlace {
 		gp.setLongitude(tmp2Loc.getLongitude());
 		gp.setAltitude(org.getAltitude() + v.y);
 	}
+
+	
+	 public static Object toString(double lat, double lon){
+		return "(lat=" + lat + ", lng=" + lon + ")";
+	}
+
+	public static PhysicalPlace fromString(String fpgpString) {
+	    String[] parts = fpgpString.split("x");
+	    if (parts.length != 2) {
+	      Log.e("ZombieRun.FloatingPointGeoPoint", "Could not parse two doubles from '" + fpgpString +
+	          "'.  Wrong number of parts to the string.");
+	      return null;
+	    }
+	    try {
+	      Double latitude = Double.parseDouble(parts[0]);
+	      Double longitude = Double.parseDouble(parts[1]);
+	      return new PhysicalPlace(latitude, longitude);
+	    } catch (NumberFormatException e) {
+	      Log.e("ZombieRun.FloatingPointGeoPoint", "Could not parse doubles from '" + fpgpString +
+	          "'.  Could not parse doubles.");
+	      return null;
+	    }
+	}
+
+	public GeoPoint getGeoPoint() {
+	    return new GeoPoint((int) Math.round(getLatitude() * 1E6),
+	            (int) Math.round(getLongitude() * 1E6));
+	}
+	
+	
 }
