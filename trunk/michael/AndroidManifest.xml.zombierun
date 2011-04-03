@@ -4,41 +4,47 @@
 	android:versionName="1.3.1">
 	<application android:icon="@drawable/icon" android:label="@string/app_name"
 		android:theme="@android:style/Theme.NoTitleBar">
-		<activity android:name=".activity.Main" android:label="@string/app_name">
+		
+		
+		<activity android:name="net.peterd.zombierun.activity.Main" android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
 
-		<!-- Alphabetical -->
-		<activity android:name=".activity.About" android:label="About"
+		<!-- ZombieRun Alphabetical -->
+		<activity android:name="net.peterd.zombierun.activity.About" android:label="About"
 			android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.MainMenuWithMultiplayerDisabled"
+		<activity android:name="net.peterd.zombierun.activity.MainMenuWithMultiplayerDisabled"
 			android:label="MainMenu_WithMultiplayerDisabled"
 			android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.SinglePlayerEntry"
+		<activity android:name="net.peterd.zombierun.activity.SinglePlayerEntry"
 			android:label="SinglePlayerEntry" android:screenOrientation="portrait"
 			android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.SinglePlayerGame"
+		<activity android:name="net.peterd.zombierun.activity.SinglePlayerGame"
 			android:label="SinglelayerGame" android:screenOrientation="portrait"
 			android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.StartGame" android:label="StartGame"
+		<activity android:name="net.peterd.zombierun.activity.StartGame" android:label="StartGame"
 			android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.StartGame$WaitingForFirstFixActivity"
+		<activity android:name="net.peterd.zombierun.activity.StartGame$WaitingForFirstFixActivity"
 			android:label="StartGame_WaitingForFirstFix"
 			android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.StartGame$ShowingPickDestinationMessageActivity"
+		<activity android:name="net.peterd.zombierun.activity.StartGame$ShowingPickDestinationMessageActivity"
 			android:label="StartGame_ShowingPickDestinationMessage"
 			android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.StartGame$PickingDestinationActivity"
+		<activity android:name="net.peterd.zombierun.activity.StartGame$PickingDestinationActivity"
 			android:label="StartGame_PickingDestination"
 			android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.WebGame" android:label="WebGame"
+		<activity android:name="net.peterd.zombierun.activity.WebGame" android:label="WebGame"
 			android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name=".activity.WinOrLoseGame"
+		<activity android:name="net.peterd.zombierun.activity.WinOrLoseGame"
 			android:label="WinOrLoseGame" android:screenOrientation="portrait"
 			android:configChanges="keyboardHidden|orientation" />
+
+
+
+
 
 		<!-- Used for install referrer tracking -->
 		<receiver android:name="com.google.android.apps.analytics.AnalyticsReceiver"

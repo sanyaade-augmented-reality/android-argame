@@ -104,6 +104,7 @@
 	<string name="menu_item_5">Search</string>
 	<string name="menu_item_6">Info</string>
 	<string name="menu_item_7">License</string>
+		<string name="menu_item_8">New Game</string>
 	
 	
 	<string name="connection_error_dialog">Sorry, a connection Error occured! \nPlease check if you are connected to the Internet.</string>
