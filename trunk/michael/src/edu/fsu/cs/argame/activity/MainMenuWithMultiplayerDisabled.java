@@ -2,6 +2,7 @@ package edu.fsu.cs.argame.activity;
 
 import edu.fsu.cs.argame.R;
 import net.peterd.zombierun.game.GameSettings;
+import net.peterd.zombierun.util.Util;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,10 +1,8 @@
-package edu.fsu.cs.argame.activity;
+package net.peterd.zombierun.util;
 
 import edu.fsu.cs.argame.R;
 import net.peterd.zombierun.constants.ApplicationConstants;
 import net.peterd.zombierun.game.GameSettings;
-import net.peterd.zombierun.util.GeoCalculationUtil;
-import net.peterd.zombierun.util.Log;
 import android.app.Activity;
 import android.os.Handler;
 import android.widget.Spinner;

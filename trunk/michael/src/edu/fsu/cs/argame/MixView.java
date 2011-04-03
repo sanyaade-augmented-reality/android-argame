@@ -33,6 +33,7 @@ import net.peterd.zombierun.game.GameEvent;
 import net.peterd.zombierun.game.GameSettings;
 import net.peterd.zombierun.service.GameEventBroadcaster;
 import net.peterd.zombierun.service.GameService;
+import net.peterd.zombierun.util.Util;
 
 import org.mixare.data.DataHandler;
 import org.mixare.data.DataSource;
@@ -83,7 +84,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import edu.fsu.cs.argame.R.drawable;
 import edu.fsu.cs.argame.activity.StartGame;
-import edu.fsu.cs.argame.activity.Util;
 import edu.fsu.cs.argame.marker.Marker;
 
 public class MixView extends Activity implements SensorEventListener,
