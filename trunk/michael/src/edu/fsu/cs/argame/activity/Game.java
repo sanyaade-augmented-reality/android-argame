@@ -10,8 +10,6 @@ import net.peterd.zombierun.constants.BundleConstants;
 import net.peterd.zombierun.constants.Constants;
 import net.peterd.zombierun.constants.Constants.GAME_MENU_OPTION;
 import net.peterd.zombierun.game.GameEvent;
-import net.peterd.zombierun.overlay.DestinationOverlay;
-import net.peterd.zombierun.overlay.ZombieOverlay;
 import net.peterd.zombierun.service.GameEventListener;
 import net.peterd.zombierun.service.GameService;
 import net.peterd.zombierun.util.Log;
@@ -24,6 +22,7 @@ import com.google.android.maps.MapView;
 import edu.fsu.cs.argame.MixMap;
 import edu.fsu.cs.argame.R;
 import edu.fsu.cs.argame.marker.DestinationMarker;
+import edu.fsu.cs.argame.marker.DestinationOverlay;
 import edu.fsu.cs.argame.marker.PlayerMarker;
 
 public abstract class Game extends MixMap implements GameEventListener {

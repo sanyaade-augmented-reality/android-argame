@@ -3,7 +3,6 @@ package edu.fsu.cs.argame.activity;
 import java.util.concurrent.atomic.AtomicReference;
 
 import net.peterd.zombierun.constants.Constants.GAME_MENU_OPTION;
-import net.peterd.zombierun.overlay.DestinationOverlay;
 import net.peterd.zombierun.service.HardwareManager;
 import net.peterd.zombierun.util.GeoPointUtil;
 import net.peterd.zombierun.util.Log;
@@ -25,6 +24,7 @@ import com.google.android.maps.Overlay;
 import edu.fsu.cs.argame.MixMap;
 import edu.fsu.cs.argame.R;
 import edu.fsu.cs.argame.marker.DestinationMarker;
+import edu.fsu.cs.argame.marker.DestinationOverlay;
 
 import org.mixare.reality.*;
 

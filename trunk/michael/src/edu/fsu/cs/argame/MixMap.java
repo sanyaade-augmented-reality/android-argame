@@ -25,7 +25,6 @@ import java.util.List;
 
 import net.peterd.zombierun.constants.Constants.GAME_MENU_OPTION;
 import net.peterd.zombierun.game.GameSettings;
-import net.peterd.zombierun.overlay.MotoCliqSafeMyLocationOverlay;
 import net.peterd.zombierun.service.GameService;
 
 import org.mixare.data.DataHandler;
