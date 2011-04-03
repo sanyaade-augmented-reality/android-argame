@@ -16,7 +16,7 @@ import android.widget.ImageView;
 public class splash extends MixView{
 
 	private static final int STOPSPLASH = 0;//time in milliseconds
-	private static final long SPLASHTIME = 3000;	
+	private static final long SPLASHTIME = 4000;	
 	private ImageView splash;	//handler for splash screen
 	private Handler splashHandler = new Handler() {
 
