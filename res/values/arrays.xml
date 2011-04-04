@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="setup_title">
+		<!-- <item>위치 정보 다운로드</item> -->
+		<!-- <item>위치 검색 반경</item> -->
+		<!-- <item>지도모드 변경 각도 </item> -->
+		<!-- <item>기본 검색 탭 </item> -->
+		<!-- <item>설정 초기화 </item> -->
+		<item>Download locations </item>
+		<item>Location search radius </item>
+		<item>Change map mode Angle </item>
+		<item>Basic Search Tab </item>
+		<item>Default settings </item>
+	</string-array>
+
+	<string-array name="category_list">
+		<!-- <item>문화 &amp; 관광 </item> -->
+		<!-- <item>공공 &amp; 안전 </item> -->
+		<!-- <item>교육 &amp; 체험 </item> -->
+		<!-- <item>복지 &amp; 커뮤니티 </item> -->
+		<!-- <item>레져 &amp; 휴식 </item> -->
+		<!-- <item>생활 &amp; 교통 </item> -->
+		<item>Culture &amp; Tourism </item>
+		<item>Public Works &amp; Safety </item>
+		<item>Education &amp; Experience </item>
+		<item>Welfare &amp; Community </item>
+		<item>Leisure &amp; relaxation </item>
+		<item>Life &amp; Transportation </item>
+	</string-array>
+
+	<string-array name="add_fav_list">
+		<!-- <item>심볼선택 </item> -->
+		<!-- <item>전화번호 없음 </item> -->
+		<item>Select the symbol </item>
+		<item>No phone number </item>
+	</string-array>
+
+	<string-array name="add_fav_rec_name">
+		<!-- <item>우리집 </item> -->
+		<!-- <item>회사 </item> -->
+		<!-- <item>거래처 </item> -->
+		<!-- <item>친구 </item> -->
+		<!-- <item>맛집 </item> -->
+		<!-- <item>쇼핑 </item> -->
+		<!-- <item>추억의 장소 </item> -->
+		<!-- <item>관광지 </item> -->
+		<item>House </item>
+		<item>Company </item>
+		<item>Customer </item>
+		<item>Friends </item>
+		<item>Gourmet </item>
+		<item> Shopping </item>
+		<item> Memories of the place </item>
+		<item> Attractions </item>
+	</string-array>
+
+	<string-array name="dialog_fav_items">
+		<!-- <item>삭제 </item> -->
+		<!-- <item>편집 </item> -->
+		<item>Delete </item>
+		<item>Edit </item>
+	</string-array>
+
+	<string-array name="category">
+		<item>CASTLE</item>
+		<item>TRDIT_TMPL</item>
+		<item>GMAN_HOUSE</item>
+		<item>RYLTOMB</item>
+		<item>DOLMEN</item>
+		<item>FERY_PRT</item>
+		<item>ARTGR</item>
+		<item>MUSEUM</item>
+		<item>SCNMSM</item>
+		<item>CLTURART_PLACE</item>
+		<item>TRRSRT</item>
+		<item>FSTVL_EVENT</item>
+		<item>LTH_CTEP</item>
+		<item>POLCSTTN</item>
+		<item>FRSTT</item>
+		<item>GNRL_LBRRY</item>
+		<item>SIGNGU</item>
+		<item>EMD</item>
+		<item>PBLOFC</item>
+		<item>PSTOFC</item>
+		<item>FRT_EXPRN</item>
+		<item>SMLD_FORGN_EXPRN</item>
+		<item>GREEN_ENVRN_EXPRN</item>
+		<item>TXTBK_EXPRN</item>
+		<item>DSPSN_WLFARE_FCLTY</item>
+		<item>WIK_FTSPT</item>
+		<item>ESLI_CNTER</item>
+		<item>AREA_REHABT_FCLTY</item>
+		<item>ACT_ASSTN_INSTT</item>
+		<item>DPRMT_INSTT</item>
+		<item>TKCRAGE_FCLTY</item>
+		<item>LTRI_INSTT</item>
+		<item>SNCLUB_FCLTY</item>
+		<item>OLLR_FCLTY</item>
+		<item>SAFETY_SCHUL</item>
+		<item>ENLCR_CNTER</item>
+		<item>OPTFMWF_FCLTY</item>
+		<item>HHSPRT_CNTER</item>
+		<item>SOCTY_WLFARE_FCLTY</item>
+		<item>RCRTFR</item>
+		<item>ARBRTM</item>
+		<item>CTYPARK</item>
+		<item>NRPRK</item>
+		<item>PUBLIC_ALSFC</item>
+		<item>PRMND_LN</item>
+		<item>PLY_PARK</item>
+		<item>TRKCRS_LN</item>
+		<item>MSP</item>
+		<item>GLCRS</item>
+		<item>FSHLC</item>
+		<item>SKI</item>
+		<item>CYCLE</item>
+		<item>RSTRT</item>
+		<item>BUS_STTN</item>
+		<item>TDTMKT</item>
+		<item>FDBNK_FCLTY</item>
+		<item>RESIDE_FCLTY</item>
+		<item>INFO_VILL</item>
+		<item>DEFAULT</item>
+	</string-array>
+
+	<string-array name="category_drawable">
+		<item>@drawable/castle</item>
+		<item>@drawable/trdit_tmpl</item>
+		<item>@drawable/gman_house</item>
+		<item>@drawable/ryltomb</item>
+		<item>@drawable/dolmen</item>
+		<item>@drawable/fery_prt</item>
+		<item>@drawable/artgr</item>
+		<item>@drawable/museum</item>
+		<item>@drawable/scnmsm</item>
+		<item>@drawable/clturart_place</item>
+		<item>@drawable/trrsrt</item>
+		<item>@drawable/fstvl_event</item>
+		<item>@drawable/lth_ctep</item>
+		<item>@drawable/polcsttn</item>
+		<item>@drawable/frstt</item>
+		<item>@drawable/gnrl_lbrry</item>
+		<item>@drawable/signgu</item>
+		<item>@drawable/emd</item>
+		<item>@drawable/pblofc</item>
+		<item>@drawable/pstofc</item>
+		<item>@drawable/frt_exprn</item>
+		<item>@drawable/smld_forgn_exprn</item>
+		<item>@drawable/green_envrn_exprn</item>
+		<item>@drawable/frt_exprn</item>
+		<item>@drawable/dspsn_wlfare_fclty</item>
+		<item>@drawable/wik_ftspt</item>
+		<item>@drawable/esli_cnter</item>
+		<item>@drawable/area_rehabt_fclty</item>
+		<item>@drawable/act_asstn_instt</item>
+		<item>@drawable/dprmt_instt</item>
+		<item>@drawable/tkcrage_fclty</item>
+		<item>@drawable/ltri_instt</item>
+		<item>@drawable/snclub_fclty</item>
+		<item>@drawable/ollr_fclty</item>
+		<item>@drawable/safety_schul</item>
+		<item>@drawable/enlcr_cnter</item>
+		<item>@drawable/optfmwf_fclty</item>
+		<item>@drawable/hhsprt_cnter</item>
+		<item>@drawable/socty_wlfare_fclty</item>
+		<item>@drawable/rcrtfr</item>
+		<item>@drawable/arbrtm</item>
+		<item>@drawable/ctypark</item>
+		<item>@drawable/nrprk</item>
+		<item>@drawable/public_alsfc</item>
+		<item>@drawable/prmnd_ln</item>
+		<item>@drawable/ply_park</item>
+		<item>@drawable/trkcrs_ln</item>
+		<item>@drawable/msp</item>
+		<item>@drawable/glcrs</item>
+		<item>@drawable/fshlc</item>
+		<item>@drawable/ski</item>
+		<item>@drawable/cycle</item>
+		<item>@drawable/rstrt</item>
+		<item>@drawable/bus_station</item>
+		<item>@drawable/tdtmkt</item>
+		<item>@drawable/fdbnk_fclty</item>
+		<item>@drawable/reside_fclty</item>
+		<item>@drawable/info_vill</item>
+		<item>@drawable/default_icon</item>
+	</string-array>
+
+	<string-array name="category_drawable_focus">
+		<item>@drawable/castle_focus</item>
+		<item>@drawable/trdit_tmpl_focus</item>
+		<item>@drawable/gman_house_focus</item>
+		<item>@drawable/ryltomb_focus</item>
+		<item>@drawable/dolmen_focus</item>
+		<item>@drawable/fery_prt_focus</item>
+		<item>@drawable/artgr_focus</item>
+		<item>@drawable/museum_focus</item>
+		<item>@drawable/scnmsm_focus</item>
+		<item>@drawable/clturart_place_focus</item>
+		<item>@drawable/trrsrt_focus</item>
+		<item>@drawable/fstvl_event_focus</item>
+		<item>@drawable/lth_ctep_focus</item>
+		<item>@drawable/polcsttn_focus</item>
+		<item>@drawable/frstt_focus</item>
+		<item>@drawable/gnrl_lbrry_focus</item>
+		<item>@drawable/signgu_focus</item>
+		<item>@drawable/emd_focus</item>
+		<item>@drawable/pblofc_focus</item>
+		<item>@drawable/pstofc_focus</item>
+		<item>@drawable/frt_exprn_focus</item>
+		<item>@drawable/smld_forgn_exprn_focus</item>
+		<item>@drawable/green_envrn_exprn_focus</item>
+		<item>@drawable/frt_exprn_focus</item>
+		<item>@drawable/dspsn_wlfare_fclty_focus</item>
+		<item>@drawable/wik_ftspt_focus</item>
+		<item>@drawable/esli_cnter_focus</item>
+		<item>@drawable/area_rehabt_fclty_focus</item>
+		<item>@drawable/act_asstn_instt_focus</item>
+		<item>@drawable/dprmt_instt_focus</item>
+		<item>@drawable/tkcrage_fclty_focus</item>
+		<item>@drawable/ltri_instt_focus</item>
+		<item>@drawable/snclub_fclty_focus</item>
+		<item>@drawable/ollr_fclty_focus</item>
+		<item>@drawable/safety_schul_focus</item>
+		<item>@drawable/enlcr_cnter_focus</item>
+		<item>@drawable/optfmwf_fclty_focus</item>
+		<item>@drawable/hhsprt_cnter_focus</item>
+		<item>@drawable/socty_wlfare_fclty_focus</item>
+		<item>@drawable/rcrtfr_focus</item>
+		<item>@drawable/arbrtm_focus</item>
+		<item>@drawable/ctypark_focus</item>
+		<item>@drawable/nrprk_focus</item>
+		<item>@drawable/public_alsfc_focus</item>
+		<item>@drawable/prmnd_ln_focus</item>
+		<item>@drawable/ply_park_focus</item>
+		<item>@drawable/trkcrs_ln_focus</item>
+		<item>@drawable/msp_focus</item>
+		<item>@drawable/glcrs_focus</item>
+		<item>@drawable/fshlc_focus</item>
+		<item>@drawable/ski_focus</item>
+		<item>@drawable/cycle_focus</item>
+		<item>@drawable/rstrt_focus</item>
+		<item>@drawable/bus_station_focus</item>
+		<item>@drawable/tdtmkt_focus</item>
+		<item>@drawable/fdbnk_fclty_focus</item>
+		<item>@drawable/reside_fclty_focus</item>
+		<item>@drawable/info_vill_focus</item>
+		<item>@drawable/default_icon_focus</item>
+	</string-array>
+
+	<string-array name="category_drawable_big">
+		<item>@drawable/castle_big</item>
+		<item>@drawable/trdit_tmpl_big</item>
+		<item>@drawable/gman_house_big</item>
+		<item>@drawable/ryltomb_big</item>
+		<item>@drawable/dolmen_big</item>
+		<item>@drawable/fery_prt_big</item>
+		<item>@drawable/artgr_big</item>
+		<item>@drawable/museum_big</item>
+		<item>@drawable/scnmsm_big</item>
+		<item>@drawable/clturart_place_big</item>
+		<item>@drawable/trrsrt_big</item>
+		<item>@drawable/fstvl_event_big</item>
+		<item>@drawable/lth_ctep_big</item>
+		<item>@drawable/polcsttn_big</item>
+		<item>@drawable/frstt_big</item>
+		<item>@drawable/gnrl_lbrry_big</item>
+		<item>@drawable/signgu_big</item>
+		<item>@drawable/emd_big</item>
+		<item>@drawable/pblofc_big</item>
+		<item>@drawable/pstofc_big</item>
+		<item>@drawable/frt_exprn_big</item>
+		<item>@drawable/smld_forgn_exprn_big</item>
+		<item>@drawable/green_envrn_exprn_big</item>
+		<item>@drawable/frt_exprn_big</item>
+		<item>@drawable/dspsn_wlfare_fclty_big</item>
+		<item>@drawable/wik_ftspt_big</item>
+		<item>@drawable/esli_cnter_big</item>
+		<item>@drawable/area_rehabt_fclty_big</item>
+		<item>@drawable/act_asstn_instt_big</item>
+		<item>@drawable/dprmt_instt_big</item>
+		<item>@drawable/tkcrage_fclty_big</item>
+		<item>@drawable/ltri_instt_big</item>
+		<item>@drawable/snclub_fclty_big</item>
+		<item>@drawable/ollr_fclty_big</item>
+		<item>@drawable/safety_schul_big</item>
+		<item>@drawable/enlcr_cnter_big</item>
+		<item>@drawable/optfmwf_fclty_big</item>
+		<item>@drawable/hhsprt_cnter_big</item>
+		<item>@drawable/socty_wlfare_fclty_big</item>
+		<item>@drawable/rcrtfr_big</item>
+		<item>@drawable/arbrtm_big</item>
+		<item>@drawable/ctypark_big</item>
+		<item>@drawable/nrprk_big</item>
+		<item>@drawable/public_alsfc_big</item>
+		<item>@drawable/prmnd_ln_big</item>
+		<item>@drawable/ply_park_big</item>
+		<item>@drawable/trkcrs_ln_big</item>
+		<item>@drawable/msp_big</item>
+		<item>@drawable/glcrs_big</item>
+		<item>@drawable/fshlc_big</item>
+		<item>@drawable/ski_big</item>
+		<item>@drawable/cycle_big</item>
+		<item>@drawable/rstrt_big</item>
+		<item>@drawable/bus_station_big</item>
+		<item>@drawable/tdtmkt_big</item>
+		<item>@drawable/fdbnk_fclty_big</item>
+		<item>@drawable/reside_fclty_big</item>
+		<item>@drawable/info_vill_big</item>
+		<item>@drawable/default_icon</item>
+	</string-array>
+	
+	  <string-array name="zombie_speeds_str">
+    <item>(2mph) Night of the Living Dead</item>
+    <item>(5mph) Resident Evil</item>
+    <item>(8mph) 28 Days Later</item>
+  </string-array>
+  <string-array name="zombie_speeds_average_speed_mph">
+    <item>2</item>
+    <item>5</item>
+    <item>8</item>
+  </string-array>
+
+  <string-array name="zombie_counts_str">
+    <item>Controlled Outbreak</item>
+    <item>Early Local Infestation</item>
+    <item>Late Local Infestation</item>
+    <item>Total Pandemic</item>
+  </string-array>
+  <string-array name="zombie_counts_average_distance_between_zombie_meters">
+    <item>500</item>
+    <item>300</item>
+    <item>200</item>
+    <item>100</item>
+  </string-array>
+	
+	
+</resources>

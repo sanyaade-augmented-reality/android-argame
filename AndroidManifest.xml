@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="edu.fsu.cs.argame" android:versionCode="1"
+	android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android"
+	android:installLocation="auto">
+	
+	<application android:label="@string/app_name" android:icon="@drawable/icon"
+		android:debuggable="true">
+		
+		<uses-library android:name="com.google.android.maps" />
+		
+		<activity android:label="@string/app_name" android:name="org.mixare.MixView"
+			android:clearTaskOnLaunch="true" android:finishOnTaskLaunch="false"
+			android:launchMode="singleTask" android:configChanges="orientation"
+			android:screenOrientation="unspecified"></activity>
+		
+		<activity android:label="@string/app_name" android:name="InitActivity"
+			android:launchMode="standard" android:screenOrientation="portrait">
+			
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			
+		</activity>
+		
+		<activity android:label="@string/app_name" android:name="SettingsActivity" />
+		
+		<activity android:label="@string/app_name" android:name="InventoryTabActivity"
+			android:configChanges="orientation" android:launchMode="singleTask"
+			android:allowTaskReparenting="false" />
+		
+		<activity android:label="@string/app_name" android:name="SearchActivity"
+			android:configChanges="orientation" android:launchMode="standard"
+			android:allowTaskReparenting="false" />
+		
+		<activity android:label="@string/app_name" android:name="AddFavoriteActivity"
+			android:configChanges="orientation" />
+	</application>
+
+
+	<uses-sdk android:minSdkVersion="4" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+</manifest> 

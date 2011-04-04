@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+                
+    <FrameLayout android:id="@+id/frame"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent">
+    	
+    	<LinearLayout android:id="@+id/poi_details"
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:orientation="vertical"
+    		android:visibility="invisible">
+    		
+    		<LinearLayout android:layout_width="fill_parent"
+			    android:layout_height="100px"
+				android:orientation="horizontal"
+				android:paddingLeft="12px"
+				android:background="@drawable/tap_title_480"
+				android:visibility="visible">
+				<ImageView android:id="@+id/poi_icon"
+					android:layout_width="82px"
+					android:layout_height="92px"
+					android:layout_gravity="bottom"/>
+				<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:orientation="vertical"
+					android:paddingLeft="12px">
+					<LinearLayout android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:layout_weight="1">
+						<TextView android:id="@+id/poi_title"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:textColor="#ffffff"
+							android:layout_gravity="center_vertical"
+							android:gravity="center_vertical"
+							android:paddingRight="100px"
+							android:textSize="25px"
+							android:text="POI Title"
+							android:singleLine="true"
+							android:ellipsize="end"/>
+					</LinearLayout>
+					
+					<LinearLayout android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:layout_weight="1">
+						<TextView android:id="@+id/poi_distance"
+							android:layout_gravity="center_vertical"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:textColor="#00ccff"
+							android:gravity="center_vertical"
+							android:textSize="30px"
+							android:text="135m"/>
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+			
+			<LinearLayout android:id="@+id/more_information"
+				android:layout_width="fill_parent"
+			    android:layout_height="140px"
+				android:orientation="vertical"
+				android:gravity="center_vertical"
+				android:padding="12px"
+				android:background="@drawable/tap_title_infomation_480"
+				android:visibility="invisible">
+				
+				<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="25px"
+						android:text="Address: "/>
+					<TextView android:id="@+id/poi_address"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textSize="25px"
+						android:text="POI Address"/>
+				</LinearLayout>
+				
+				<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:minHeight="40px"
+					android:orientation="horizontal">
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="fill_parent"
+						android:textSize="25px"
+						android:text="Phone Number :  "/>
+					<TextView android:id="@+id/poi_telephone"
+						android:layout_width="wrap_content"
+						android:layout_height="fill_parent"
+						android:textSize="25px"
+						android:text="031-345-6789"/>
+					<Button android:id="@+id/call_btn"
+						android:layout_width="44px"
+						android:layout_height="45px"
+						android:layout_marginLeft="10px"
+						android:background="@drawable/btn_call_selector"
+						/>
+				</LinearLayout>
+			</LinearLayout>
+    	</LinearLayout>
+    	
+    	<Button android:id="@+id/more_information_button_show_portrait"
+			android:layout_width="380px"
+			android:layout_height="100px"
+			android:background="@drawable/tap_icon_down_480_selector"
+			android:visibility="invisible"
+			/>
+			
+		<Button android:id="@+id/more_information_button_hide_portrait"
+			android:layout_width="380px"
+			android:layout_height="100px"
+			android:background="@drawable/tap_icon_up_480_selector"
+			android:visibility="invisible"
+			/>
+    	
+    	<Button android:id="@+id/more_information_button_show_landscape"
+			android:layout_width="700px"
+			android:layout_height="100px"
+			android:background="@drawable/tap_icon_down_800_selector"
+			android:visibility="invisible"
+			/>
+			
+		<Button android:id="@+id/more_information_button_hide_landscape"
+			android:layout_width="700px"
+			android:layout_height="100px"
+			android:background="@drawable/tap_icon_up_800_selector"
+			android:visibility="invisible"
+			/>
+    	
+    	
+    	<LinearLayout android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+    		android:paddingTop="277px">
+    		<LinearLayout android:layout_width="fill_parent"
+    			android:layout_height="wrap_content"
+    			android:layout_weight="1">
+    			<Button android:id="@+id/left_arrow"
+    				android:layout_width="70px"
+	    			android:layout_height="126px"
+		    		android:background="@drawable/btn_back"
+		    		android:visibility="invisible"/>
+    		</LinearLayout>
+	    		
+	    	<LinearLayout android:layout_width="fill_parent"
+    			android:layout_height="wrap_content"
+    			android:layout_weight="1"
+    			android:gravity="center|right">
+    			<Button android:id="@+id/right_arrow"
+    				android:layout_width="70px"
+	    			android:layout_height="126px"
+		    		android:background="@drawable/btn_prv"
+		    		android:visibility="gone"/>
+    		</LinearLayout>
+    	</LinearLayout>
+    </FrameLayout>
+</LinearLayout>
+

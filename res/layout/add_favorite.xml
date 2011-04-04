@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+	<LinearLayout android:id="@+id/frame_listview"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" >
+	
+		<LinearLayout
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#075bdc" >
+		    
+		    <TextView android:id="@+id/fav_header"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:paddingTop="5dip"
+			    android:paddingBottom="5dip"
+			    android:paddingLeft="15dip"
+			    android:textColor="#ffffff"
+			    android:textSize="15dip"
+			    android:text="@string/setup_search_tab_favorite" />
+	
+		</LinearLayout>
+					    
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#ffffff" >
+		    
+			<EditText android:id="@+id/title_edittext" 
+				android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+		    	android:layout_weight="1"
+			    android:paddingLeft="15dip"
+			    android:textSize="15dip"
+		    	android:background="#ffffff"
+		    	android:inputType="text"
+		    	android:hint="@string/addfav_hint"
+		    	android:imeOptions="actionDone|flagNoEnterAction"
+		    	android:maxLength="20"
+		    	android:lines="1"  />
+		    	
+			<EditText android:id="@+id/number_edittext" 
+				android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+		    	android:layout_weight="1"
+			    android:paddingLeft="15dip"
+			    android:textSize="15dip"
+		    	android:background="#ffffff"
+		    	android:inputType="number"
+		    	android:visibility="gone"
+		    	android:maxLength="15"
+		    	android:lines="1" />
+		    	
+		   	<Button android:id="@+id/rec_text"
+				android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textSize="20dip"
+			    android:text="@string/addfav_button_rec"/>
+			    
+		</LinearLayout>
+		
+	    <ListView android:id="@+id/add_fav_lv"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" />
+
+		<LinearLayout android:id="@+id/phone_divider" 
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" 
+		    android:background="#4f4f4f"
+		    android:visibility="gone"
+		    android:paddingTop="1px"/>
+		
+		<LinearLayout android:id="@+id/phone_layout" 
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:visibility="gone" >
+		    
+		    <ImageView
+		    	android:layout_width="65px"
+			    android:layout_height="65px" 
+			    android:layout_marginTop="4dip"
+	    		android:layout_marginBottom="1dip"
+			    android:src="@drawable/btn_call" />
+			    
+			<EditText android:id="@+id/phone_edittext" 
+				android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+		    	android:layout_weight="1"
+			    android:paddingLeft="15dip"
+			    android:layout_margin="5dip"
+			    android:textSize="15dip"
+		    	android:background="#ffffff"
+		    	android:inputType="phone"
+		    	android:maxLength="17"
+		    	android:hint="@string/addfav_phone_hint"
+		    	android:imeOptions="actionDone|flagNoEnterAction"
+		    	android:lines="1" />
+			   
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingTop="15dip" >
+		       
+			<Button android:id="@+id/save"
+				android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="1"
+			    android:layout_margin="2dip"
+			    android:padding="10dip"
+			    android:textSize="20dip"
+			    android:text="@string/addfav_button_save" />
+			    
+			<Button android:id="@+id/cancel"
+				android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="1"
+			    android:layout_margin="2dip"
+			    android:padding="10dip"
+			    android:textSize="20dip"
+			    android:text="@string/addfav_button_cancel" />
+		    
+		</LinearLayout>
+		
+	</LinearLayout>
+	
+	<LinearLayout android:id="@+id/frame_gridview"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:visibility="gone" >
+	
+		<LinearLayout android:id="@+id/poi_search_header"
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#075bdc" >
+		    
+		    <TextView 
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:paddingTop="5dip"
+			    android:paddingBottom="5dip"
+			    android:paddingLeft="15dip"
+			    android:textColor="#ffffff"
+			    android:textSize="15dip"
+			    android:text="@string/addfav_header_gridview"  />
+	
+		</LinearLayout>
+		
+		<GridView
+		    android:id="@+id/gridview"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent"
+		    android:numColumns="4"
+		    android:verticalSpacing="9dip"
+		    android:horizontalSpacing="9dip"
+		    android:background="#1c2127"
+		    android:layout_gravity="center"
+		    android:gravity="center" />
+		    
+	</LinearLayout>
+	
+	<LinearLayout android:id="@+id/frame_listview_rec"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:background="#000000"
+	    android:visibility="gone" >
+	
+		<LinearLayout android:id="@+id/listview_rec_header"
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#075bdc" >
+		    
+		    <TextView 
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:paddingTop="5dip"
+			    android:paddingBottom="5dip"
+			    android:paddingLeft="15dip"
+			    android:textColor="#ffffff"
+			    android:textSize="15dip"
+			    android:text="@string/addfav_header_rec" />
+	
+		</LinearLayout>
+		
+		<ListView
+		    android:id="@+id/listview_rec"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent" />
+		    
+	</LinearLayout>
+</FrameLayout>
