@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+	<LinearLayout android:id="@+id/poi_search_header"
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#075bdc"
+	    android:visibility="gone" >
+	    
+	    <TextView android:id="@+id/poi_search_header_text" 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingTop="5dip"
+		    android:paddingBottom="5dip"
+		    android:paddingLeft="15dip"
+		    android:textColor="#ffffff"
+		    android:textSize="21dip" />
+
+	</LinearLayout>
+	
+    <TextView android:id="@+id/empty_view"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		android:paddingTop="10dip"
+		android:paddingBottom="5dip"
+	    android:paddingLeft="10dip"
+	    android:textColor="#ffffff"
+	    android:textSize="20dip"
+	    android:visibility="gone"
+	    android:text="@string/search_empty_list" />
+	    
+    <ListView android:id="@+id/poi_search_lv"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" />
+
+</LinearLayout>

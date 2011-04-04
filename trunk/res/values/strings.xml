@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">AR ZombieGame</string>
+	<string name="search_hint">Search Location</string>
+
+	<string name="N">N</string>
+	<string name="NE">NE</string>
+	<string name="E">E</string>
+	<string name="SE">SE</string>
+	<string name="S">S</string>
+	<string name="SW">SW</string>
+	<string name="W">W</string>
+	<string name="NW">NW</string>
+
+
+	<string name="empty_list">Sorry, \nThere is no location information
+		\navailable within this radius.\nPlease try to search in a wider
+		range.</string>
+	<string name="option_not_available">Sorry, We are working on it... \nThis option will
+		be available soon!</string>
+
+	<string name="license">Copyright (C) 2011- Florida State University \n\n
+		Copyright (C) 2010- Peer internet solutions
+		\n\nThis program is free software: you can redistribute it and/or modify it
+		under the terms of the
+		GNU General Public License as published by the Free Software Foundation,
+		either version 3 of the License,
+		or at your option) any later version.
+		\n\nThis program is distributed in the hope that it will be useful, but
+		WITHOUT ANY WARRANTY; without even
+		the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+		PURPOSE. See the GNU General Public
+		License for more details.
+		\n\n You should have received a copy of the GNU General Public License
+		along with this program.
+		If not, see &lt;http://www.gnu.org/licenses/&gt; </string>
+
+	<string name="menu_item_1">Data Source</string>
+	<string name="menu_item_2">List view</string>
+	<string name="menu_item_3">Map view</string>
+	<string name="menu_item_4">Zoom level</string>
+	<string name="menu_item_5">Search</string>
+	<string name="menu_item_6">Info</string>
+	<string name="menu_item_7">License</string>
+
+
+	<string name="connection_error_dialog">Sorry, a connection Error occured! \nPlease check
+		if you are connected to the Internet.</string>
+	<string name="connection_error_dialog_button1">Retry</string>
+	<string name="connection_error_dialog_button2">Open Settings</string>
+	<string name="connection_error_dialog_button3">Close App</string>
+
+	<string name="connection_GPS_dialog_text">The GPS location can not be updated... \nIf you
+		continue it could be that the Information
+		\nwill not be displayed in the right place.</string>
+	<string name="connection_GPS_dialog_button1">Continue</string>
+	<string name="connection_GPS_dialog_button2">Close</string>
+
+	<string name="no_website_available">Sorry, there is no further \ninformation available.	</string>
+
+	<string name="license_title">License</string>
+	<string name="close_button">Close</string>
+
+
+	<string name="usage_info_header">About Android ARgame</string>
+	<string name="usage_info_body">ARgame is an Augmented Reality project that merges
+		fantasy and reality through real-time, multi-player, location-based
+		gaming. \n \n
+		Leveraging the on-board sensors of the modern Android device with a backend
+		powered by a robust web engine, we present an augmented reality game
+		that will encourage players to explore and experience the actual
+		environment while engaged in an immersive multi-player gaming
+		experience.</string>
+	<string name="usage_info_cb">Hide at startup</string>
+
+	<string name="dialog_favorite_title">dialog_favorite_title</string>
+
+	<string name="dialog_download_title">dialog_download_title</string>
+	<string name="dialog_download_body">dialog_download_body</string>
+
+	<string name="addfav_header">addfav_header </string>
+	<string name="addfav_header_gridview">addfav_header_gridview</string>
+	<string name="addfav_header_rec">addfav_header_rec </string>
+	<string name="addfav_hint">name...</string>
+	<string name="addfav_phone_hint">addfav_phone_hint </string>
+	<string name="addfav_button_rec">addfav_button_rec </string>
+	<string name="addfav_button_save">Save  </string>
+	<string name="addfav_button_cancel">Cancel </string>
+	<string name="addfav_dialog_fillinmissing">Please complete entry! </string>
+	<string name="addfav_dialog_existing_entry">Entry already exists!</string>
+	<string name="addfav_dialog_update">addfav_dialog_update </string>
+	<string name="addfav_dialog_create_new">addfav_dialog_create_new </string>
+	<string name="addfav_edit_mode">addfav_edit_mode  </string>
+
+	<string name="search_nearbycat_header">search_nearbycat_header </string>
+	<string name="search_current_loc">search_current_loc</string>
+	<string name="search_empty_list">search_empty_list </string>
+	<string name="search_no_network">search_no_network</string>
+	<string name="search_no_network_after_retry">search_no_network_after_retry</string>
+
+	<string name="setup_search_tab_nearby">Nearby</string>
+	<string name="setup_search_tab_category">Categories</string>
+	<string name="setup_search_tab_favorite">Favorites</string>
+
+	<string name="setup_dialog_option_reset">Reset all to defaults?</string>
+	<string name="setup_dialog_yes">Yes </string>
+	<string name="setup_dialog_no"> No </string>
+	<string name="setup_dialog_degree">° </string>
+	<string name="setup_dialog_alarm">setup_dialog_alarm</string>
+
+<!-- 	<string name="main_menu_search">Search</string> -->
+<!-- 	<string name="main_menu_favorite">Favorites </string> -->
+	<string name="main_menu_my_location">My Location</string>
+	
+	<string name="main_menu_satellite">Satellite</string>
+	<string name="main_menu_map_mode">Toggle Sat/Map</string>
+	
+<!-- 	<string name="main_menu_map_mode_map">Map Mode Map</string> -->
+<!-- 	<string name="main_menu_map_mode_sat">Map Mode Sat</string> -->
+	
+	<string name="main_menu_new_game">New Game</string>
+	<string name="main_menu_about">About</string>
+	<string name="main_menu_setup">Setup </string>
+	
+	<string name="main_menu_cur_info">Setup </string>
+	<string name="main_menu_liscense">Liscense </string>
+
+	<string name="search_menu_refresh">Refresh </string>
+	<string name="search_menu_selection">Filter Selection</string>
+
+	<string name="mixview_dialog_title">Are you sure you want to quit?</string>
+	<string name="waiting_for_gps_signal">Triangulating location...</string>
+	<string name="no_gps_signal">GPS Unavailable</string>
+
+	<string name="kilometer_abbreviation">km</string>
+	<string name="meter_abbreviation">m</string>
+	
+
+
+
+
+	<!-- Hardware capability error messages -->
+	<string name="error_no_gps">No GPS Device Found.</string>
+	<string name="error_gps_disabled">ZombieRun requires GPS-level location information.
+		Your GPS device is disabled. Please enable your GPS receiver.</string>
+	<string name="enable_gps">Enable GPS</string>
+	<string name="error_no_vibrator">Could not find phone vibrator. Ack! WTF! I can\'t
+		work in this environment.</string>
+
+
+
+
+	<!-- Main menu strings -->
+	<string name="header_singleplayer_entry">Single Player Game</string>
+	<string name="header_multiplayer_entry">Multiplayer Game</string>
+	<string name="spinner_zombie_count_text">Type of Outbreak (zombie density)</string>
+	<string name="spinner_zombie_speed_text">Type of Zombie (zombie speed)</string>
+	<string name="start_game_button_text">Start Game</string>
+	<string name="singleplayer_game_entry_button_text">Start Single Player Game</string>
+	<string name="multiplayer_game_entry_button_text">Start Multiplayer Game</string>
+	<string name="start_singleplayer_game_button_text">Start Single Player Game</string>
+	<string name="start_multiplayer_game_button_text">Create New Multi Player Game</string>
+	<string name="join_multiplayer_game_button_text">Join Multi Player Game</string>
+	<string name="help_button_text">Help</string>
+
+
+
+
+	<string name="general_info_title">General Information</string>
+	<string name="general_info_text">GPS info: </string>
+	<string name="longitude">Longitude: </string>
+	<string name="latitude">Latitude: </string>
+	<string name="altitude">Altitude: </string>
+	<string name="speed">Speed: </string>
+	<string name="accuracy">Accuracy: </string>
+	<string name="gps_last_fix">Last GPS fix: </string>
+
+
+
+</resources>
