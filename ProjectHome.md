@@ -1,0 +1,3 @@
+ARgame is an Augmented Reality project that merges fantasy and reality through real-time, multi-player, location-based gaming.
+
+Leveraging the on-board sensors of the modern Android device with a backend powered by a robust web engine, we present an augmented reality game that will encourage players to explore and experience the actual environment while engaged in an immersive multi-player gaming experience.
